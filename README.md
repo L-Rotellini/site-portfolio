@@ -24,8 +24,8 @@
 ## 🧰 Installation & développement
 
 # 1. Cloner le projet
-git clone https://github.com/L-Rotellini/louisrotellini-portfolio.git
-cd portfolio
+git clone https://github.com/L-Rotellini/site-portfolio.git
+cd site-portfolio
 
 # 2. Installer les dépendances
 npm install
