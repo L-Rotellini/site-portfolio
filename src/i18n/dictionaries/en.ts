@@ -47,7 +47,7 @@ export const en: Dictionary = {
     label: "Products",
     title: "My AI products, from idea to production.",
     intro:
-      "Five products built by piloting AI. The LLM is chosen per need: often Mistral for European compliance. Claude Code is how I drive development. Filter by stage, open a card.",
+      "Four products built by piloting AI. The LLM is chosen per need: often Mistral for European compliance. Claude Code is how I drive development. Filter by stage, open a card.",
     filters: {
       all: "All",
       shipped: "Shipped",

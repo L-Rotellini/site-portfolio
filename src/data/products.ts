@@ -42,7 +42,7 @@ export const products: Product[] = [
       "Conçu et mis en production en autonomie. Confidentialité par conception : refus délibéré d'un coffre patient nominatif pour éviter les contraintes HDS.",
     ops:
       "Vérification humaine obligatoire avant tout export ou partage. Récents conservés sur l'appareil 7, 30 ou 90 jours au choix, effacés à l'ouverture de l'app une fois le délai passé. Zéro stockage serveur (aucune base, aucun bucket), vérifié dans le code.",
-    kpi: "Assemblage PDF mesuré : 3 à 20 ms pour 1 à 12 pages, sur l'appareil · ~87 Ko de JS partagé.",
+    kpi: "Assemblage PDF quasi instantané, entièrement sur l'appareil · ~87 Ko de JS partagé.",
     metric: "En production · doctap.app",
     image: { src: "/projects/doctap-desktop.jpg", alt: "DocTap : capture de documents et assemblage PDF sur mobile" },
   },
@@ -105,24 +105,5 @@ export const products: Product[] = [
       "La fiabilité vient des règles, pas du modèle. Mon différenciant, appliqué. Construit en no-code assumé.",
     metric: "Fiabilité par les règles",
     image: { src: "/projects/assistant-tri-offres-desktop.jpg", alt: "Moteur de scoring : grille d'évaluation d'items dans Airtable" },
-  },
-  {
-    id: "rekap",
-    name: "Rekap",
-    domain: "Pharma · Sales",
-    status: "concept",
-    statusLabel: "Cadrage produit",
-    one: "Agent de préparation de visite commerciale, en secteur pharmaceutique.",
-    stack: ["Salesforce API", "@react-pdf/renderer", "spec · wireframe"],
-    live: false,
-    problem:
-      "Avant chaque visite, un commercial agrège vingt minutes de données dispersées dans un CRM complexe.",
-    approach:
-      "Connexion Salesforce, génération d'une fiche de visite PDF en moins d'une minute. Au stade spec + wireframe.",
-    outcome:
-      "Cadrage de bout en bout : audit du besoin, spec métier, modèle éco, séquencement. Projet porté par Antwork.",
-    focus: "Cadrage de bout en bout : audit du besoin · spec métier · modèle éco · séquencement.",
-    metric: "Cadrage complet",
-    image: { src: "/projects/rekap-placeholder.svg", alt: "Rekap : fiche de visite commerciale générée en PDF" },
   },
 ];
