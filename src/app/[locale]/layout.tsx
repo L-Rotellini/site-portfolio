@@ -130,7 +130,7 @@ export default async function RootLayout({
     url: `${SITE_URL}${localePrefix(locale)}`,
     email: `mailto:${EMAIL}`,
     image: `${SITE_URL}/louis-rotellini.jpg`,
-    sameAs: [GITHUB_URL, LINKEDIN_URL, "https://www.malt.fr/profile/louisrotellini"],
+    sameAs: [GITHUB_URL, LINKEDIN_URL],
     knowsAbout: dict.meta.knowsAbout,
     address: {
       "@type": "PostalAddress",
