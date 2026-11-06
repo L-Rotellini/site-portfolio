@@ -13,7 +13,7 @@ const STATUS_DOT: Record<ProductStatus, string> = {
 };
 
 type Filter = "all" | ProductStatus;
-const FILTERS: Filter[] = ["all", "shipped", "prototype", "concept"];
+const FILTERS: Filter[] = ["all", "shipped", "prototype"];
 
 export default function WorkSection({
   dict,

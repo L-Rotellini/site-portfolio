@@ -23,7 +23,7 @@ export const productsEn: Record<string, ProductOverlay> = {
       "Designed and shipped to production solo. Privacy by design: deliberately refused a named patient vault to stay clear of French HDS health-data constraints.",
     ops:
       "Mandatory human check before any export or share. Recents kept on the device for 7, 30 or 90 days (user setting), erased when the app is opened once that period has passed. Zero server-side storage (no database, no bucket), verified in the code.",
-    kpi: "Measured PDF assembly: 3 to 20 ms for 1 to 12 pages, on-device · ~87 KB of shared JS.",
+    kpi: "Near-instant PDF assembly, entirely on-device · ~87 KB of shared JS.",
     metric: "In production · doctap.app",
     imageAlt: "DocTap: document capture and PDF assembly on mobile",
   },
@@ -71,19 +71,5 @@ export const productsEn: Record<string, ProductOverlay> = {
       "Reliability comes from the rules, not the model. My differentiator, applied. Deliberately built no-code.",
     metric: "Reliability through rules",
     imageAlt: "Scoring engine: item evaluation grid in Airtable",
-  },
-  rekap: {
-    domain: "Pharma · Sales",
-    statusLabel: "Product scoping",
-    one: "Sales-visit preparation agent, in the pharmaceutical sector.",
-    problem:
-      "Before every visit, a sales rep spends twenty minutes gathering data scattered across a complex CRM.",
-    approach:
-      "Salesforce connection, generation of a PDF visit brief in under a minute. Currently at the spec + wireframe stage.",
-    outcome:
-      "End-to-end scoping: needs audit, business spec, business model, sequencing. Project carried by Antwork.",
-    focus: "End-to-end scoping: needs audit · business spec · business model · sequencing.",
-    metric: "Full scoping",
-    imageAlt: "Rekap: sales visit brief generated as a PDF",
   },
 };
