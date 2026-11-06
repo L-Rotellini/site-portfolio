@@ -47,7 +47,7 @@ export const fr = {
     label: "Produits",
     title: "Mes produits IA, de l'idée à la production.",
     intro:
-      "Cinq produits construits en pilotant l'IA. Le LLM est choisi selon le besoin : souvent Mistral pour la conformité européenne. Claude Code me sert à piloter le développement. Filtre par stade, ouvre une fiche.",
+      "Quatre produits construits en pilotant l'IA. Le LLM est choisi selon le besoin : souvent Mistral pour la conformité européenne. Claude Code me sert à piloter le développement. Filtre par stade, ouvre une fiche.",
     filters: {
       all: "Tous",
       shipped: "En prod",
