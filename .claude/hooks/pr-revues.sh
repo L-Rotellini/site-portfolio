@@ -17,18 +17,19 @@ readonly MOTIF="PR refusée : passe /code-review et /security-review, puis note 
 
 entree=$(cat)
 
-if ! command -v jq >/dev/null 2>&1; then
-	# Sans jq, rien n'est lisible : une création de PR est refusée plutôt que laissée passer sans contrôle.
+illisible() {
+	# Entrée illisible : une création de PR est refusée plutôt que laissée passer sans contrôle.
 	case "$entree" in
 		*"gh pr create"* | *create_pull_request*)
-			printf '%s\n' "jq introuvable : la description de la PR ne peut pas être contrôlée." "$MOTIF" >&2
+			printf '%s\n' "$1 : la description de la PR ne peut pas être contrôlée." "$MOTIF" >&2
 			exit 2
 			;;
 	esac
 	exit 0
-fi
+}
 
-outil=$(jq -r '.tool_name // ""' <<<"$entree" 2>/dev/null) || outil=""
+command -v jq >/dev/null 2>&1 || illisible "jq introuvable"
+outil=$(jq -r '.tool_name // ""' <<<"$entree" 2>/dev/null) || illisible "entrée JSON illisible"
 texte=""
 fichiers=()
 
