@@ -8,6 +8,11 @@
             "type": "command",
             "if": "Bash(gh pr create*)",
             "command": "\"${CLAUDE_PROJECT_DIR}/.claude/hooks/pr-revues.sh\""
+          },
+          {
+            "type": "command",
+            "if": "Bash(gh api *)",
+            "command": "\"${CLAUDE_PROJECT_DIR}/.claude/hooks/pr-revues.sh\""
           }
         ]
       },
