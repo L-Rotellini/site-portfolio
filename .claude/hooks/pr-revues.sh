@@ -5,7 +5,7 @@
 # Entrée : le JSON du hook sur stdin. Créations contrôlées et texte lu :
 #   - outil Bash ou PowerShell (tool_input.command) :
 #       gh pr create : la commande, plus le fichier passé à --body-file ou -F s'il existe ;
-#       gh api vers un chemin qui finit par /pulls, en POST (-X POST, --method POST, ou champs
+#       gh api vers un chemin qui finit par /pulls (requête ?… admise), en POST (-X POST, --method POST, ou champs
 #       -f/-F/--field/--raw-field/--input sans méthode GET) : la commande, plus le fichier passé à
 #       --input s'il existe ;
 #     chemin relatif lu depuis le champ cwd du hook ; toute autre commande sort en 0 ;
@@ -35,7 +35,7 @@ creation_pr() { # $1 : texte d'une commande ; vrai si elle contient gh pr create
 api_cree_pr() { # $1 : un bout de commande ; vrai si c'est un gh api POST vers .../pulls
 	local t=" $1 " methode
 	[[ "$t" =~ gh[[:space:]]+api[[:space:]] ]] || return 1
-	grep -qE "[[:space:]][\"']?[^[:space:]\"':]*/pulls[\"']?[[:space:]]" <<<"$t" || return 1
+	grep -qE "[[:space:]][\"']?[^[:space:]\"']*/pulls(\?[^[:space:]\"']*)?[\"']?[[:space:]]" <<<"$t" || return 1
 	methode=$(grep -oE -- "[[:space:]](-X[[:space:]]*=?|--method[[:space:]=]+)[\"']?[A-Za-z]+" <<<"$t" |
 		tail -n 1 | grep -oE '[A-Za-z]+$' | tr '[:lower:]' '[:upper:]')
 	if [[ -n "$methode" ]]; then
@@ -63,7 +63,8 @@ illisible() {
 	local brut=${entree//\\\"/\"}
 	brut=${brut//\\n/$'\n'}
 	brut=${brut//\\t/ }
-	if creation_pr "$brut" || [[ "$brut" == *create_pull_request* ]] || creation_api "$brut"; then
+	if creation_pr "$brut" || creation_api "$brut" ||
+		grep -qE '"tool_name"[[:space:]]*:[[:space:]]*"mcp__[^"]*create_pull_request"' <<<"$brut"; then
 		refuser "$1 : la description de la PR ne peut pas être contrôlée."
 	fi
 	exit 0
