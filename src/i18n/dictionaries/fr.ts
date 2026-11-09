@@ -348,7 +348,7 @@ export const fr = {
     contactTitle: "Contact",
     contactBody:
       "Écrivez-moi en quelques lignes : le nombre de sites et de clients, la technologie, l'hébergeur et l'échéance que vous avez en tête.",
-    contactCta: "Écrire à Louis",
+    contactCta: "M'écrire",
     mailSubject: "Cession de clientèle web",
     mailBody: `Bonjour Louis,
 
