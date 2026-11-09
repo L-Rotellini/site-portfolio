@@ -92,7 +92,7 @@ export default async function CederSaClienteleWeb({
     <div className={s.cs}>
       <header className={s.nav}>
         <div className={`${s.wrap} ${s.navIn}`}>
-          <Link className={s.brand} href={PATH} aria-label={t.brandAria}>
+          <Link className={s.brand} href={PATH}>
             <BrandMark className={s.brandMark} />
             <div>
               <strong>Louis Rotellini</strong>

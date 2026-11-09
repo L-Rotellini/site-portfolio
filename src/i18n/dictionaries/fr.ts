@@ -278,7 +278,6 @@ export const fr = {
     metaTitle: "Céder sa clientèle web : reprise de vos sites et clients",
     metaDescription:
       "Vous arrêtez votre activité web ? Je reprends la maintenance, l'hébergement et les sites WordPress de vos clients, à partir d'un seul client.",
-    brandAria: "Louis Rotellini, développeur web à Lille",
     brandRole: "Développeur web · Lille",
     cta: "Parler de ma cession",
     hero: {
@@ -332,30 +331,26 @@ export const fr = {
         {
           title: "Un premier échange, confidentiel",
           body: "Vous me décrivez vos clients, leurs sites, leurs contrats et votre calendrier.",
-          paid: "",
         },
         {
           title: "Une proposition écrite",
           body: "Après avoir vu les contrats et les sites, et si la reprise me paraît possible, une proposition chiffrée avec le calendrier de la transition.",
-          paid: "",
         },
         {
           title: "Vous présentez la suite",
           body: "Chaque client reçoit un message de votre part et donne son accord par écrit. C'est votre parole qui compte pour lui.",
-          paid: "",
         },
         { title: "La signature", body: "L'acte de cession est signé.", paid: "1re partie du prix versée" },
         {
           title: "La transition",
           body: "Je reprends les accès un par un, en m'assurant que tout fonctionne ; vous restez joignable pendant une période fixée ensemble.",
-          paid: "",
         },
         {
           title: "Le solde du prix",
           body: "Douze mois après la signature, selon les clients restés.",
           paid: "Solde versé",
         },
-      ],
+      ] as { title: string; body: string; paid?: string }[],
     },
     about: {
       eyebrow: "Qui je suis",
