@@ -205,7 +205,8 @@ html[data-theme="dark"] .logos__row img.lg-color { filter: none; opacity: 0.8; }
 .foot { padding: 34px 0 calc(60px + env(safe-area-inset-bottom)); }
 .foot__in { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
 .foot__ctrls { display: flex; align-items: center; gap: 14px; }
-.accents { display: flex; gap: 6px; }
+/* gap 9px : centres espacés de 24px, exception d'espacement de WCAG 2.2 (2.5.8). */
+.accents { display: flex; gap: 9px; }
 .accents button { width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid var(--rule-2); cursor: pointer; padding: 0; transition: transform 0.15s var(--ease); }
 .accents button.is-on { transform: scale(1.18); }
 .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 100px; padding: 2px; }
@@ -370,6 +371,21 @@ body.mm-open .menu-btn span:nth-child(2) { transform: translateY(-3.3px) rotate(
 .art li { font-size: 15px; color: var(--ink-2); padding-left: 20px; position: relative; }
 .art li::before { content: "·"; position: absolute; left: 0; color: var(--accent); }
 .art a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+/* Thème sombre : l'accent pur (#1e48e6) ne donne que 2,9:1 sur --paper. On le
+   rapproche de --ink pour tenir 4,5:1 (WCAG 2.2 AA, 1.4.3) sans nouvelle couleur. */
+html[data-theme="dark"] .art__n, html[data-theme="dark"] .art a:not(.btn) { color: color-mix(in oklab, var(--accent) 55%, var(--ink)); }
+
+/* ===== Page cession (/ceder-sa-clientele-web) : mêmes jetons que la page légale ===== */
+.legal-cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+.art .legal-cta { margin-top: 22px; }
+.art .btn { color: var(--paper); text-decoration: none; }
+.art .btn:hover { color: var(--ink); }
+.steps { margin: 6px 0 0; padding: 0; list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 14px; }
+.steps li { counter-increment: step; position: relative; padding-left: 34px; font-size: 15.5px; color: var(--ink-2); }
+.steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 2px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.steps strong { color: var(--ink); font-weight: 600; }
+.faq + .faq { margin-top: 22px; }
+.faq h3 { font-size: 17px; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 6px; }
 
 /* ===== 404 ===== */
 .nf { display: flex; align-items: center; min-height: min(78vh, 720px); padding: clamp(80px, 12vw, 150px) 0 clamp(56px, 9vw, 110px); border-bottom: 1px solid var(--rule); }

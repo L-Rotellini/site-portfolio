@@ -1,6 +1,6 @@
 // EN dictionary: must satisfy the `Dictionary` type defined by fr.ts.
 
-import type { Dictionary } from "./fr";
+import fr, { type Dictionary } from "./fr";
 
 export const en: Dictionary = {
   nav: {
@@ -242,11 +242,17 @@ export const en: Dictionary = {
     intro:
       "Legal information for the louisrotellini.fr website, under French law on confidence in the digital economy.",
     publisherTitle: "Publisher",
-    publisherRole: "Louis Rotellini, AI Product Engineer.",
-    publisherLocation: "Lille / Paris, France.",
-    contactPrefix: "Contact: ",
+    publisherRole: "Louis Rotellini, sole proprietor (entrepreneur individuel, EI).",
+    publisherLines: [
+      "SIREN: 800 503 476",
+      "Address: 30 rue du Maréchal Foch, 59000 Lille, France",
+      "Phone: +33 6 15 76 72 72",
+      "Publication director: Louis Rotellini",
+    ],
+    contactPrefix: "Email: ",
     hostTitle: "Host",
-    hostBody: "Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+    hostBody: "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States.",
+    hostPhone: "Phone: +1 559 288 7060",
     ipTitle: "Intellectual property",
     ipBody:
       "All content on this site (text, code, images, structure) is protected by copyright. Any reproduction, even partial, requires prior authorization.",
@@ -260,9 +266,13 @@ export const en: Dictionary = {
     ],
     contactTitle: "Contact",
     contactBody: "For any question about this legal notice or data protection: ",
-    lastUpdate: "Last updated · July 2026",
+    lastUpdate: "Last updated · November 9, 2026",
     homeLink: "Home",
   },
+
+  // FR-only page (/ceder-sa-clientele-web): never rendered in English, the
+  // French copy is kept here only to satisfy the Dictionary type.
+  cession: fr.cession,
 
   mail: {
     subject: "Getting in touch",
