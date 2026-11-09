@@ -245,8 +245,8 @@ export const en: Dictionary = {
     publisherRole: "Louis Rotellini, sole proprietor (entrepreneur individuel, EI).",
     publisherLines: [
       "SIREN: 800 503 476",
-      "Address: [ADRESSE À FOURNIR PAR LOUIS]",
-      "Phone: [TÉLÉPHONE À FOURNIR PAR LOUIS]",
+      "Address: 30 rue du Maréchal Foch, 59000 Lille, France",
+      "Phone: +33 6 15 76 72 72",
       "Publication director: Louis Rotellini",
     ],
     contactPrefix: "Email: ",

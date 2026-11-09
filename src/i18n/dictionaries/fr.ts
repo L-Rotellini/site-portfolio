@@ -246,8 +246,8 @@ export const fr = {
     publisherRole: "Louis Rotellini, entrepreneur individuel (EI).",
     publisherLines: [
       "SIREN : 800 503 476",
-      "Adresse : [ADRESSE À FOURNIR PAR LOUIS]",
-      "Téléphone : [TÉLÉPHONE À FOURNIR PAR LOUIS]",
+      "Adresse : 30 rue du Maréchal Foch, 59000 Lille",
+      "Téléphone : 06 15 76 72 72",
       "Directeur de la publication : Louis Rotellini",
     ],
     contactPrefix: "E-mail : ",
