@@ -272,83 +272,156 @@ export const fr = {
     homeLink: "Accueil",
   },
 
-  // Page /ceder-sa-clientele-web : française uniquement (hors menu, palette et pied de page).
+  // Page /ceder-sa-clientele-web : française uniquement, avec son propre en-tête et pied de page
+  // (ni menu du portfolio, ni palette, ni bascule EN). Texte de la V2 validée (docs/design/cession-v2.html).
   cession: {
     metaTitle: "Céder sa clientèle web : reprise de vos sites et clients",
     metaDescription:
       "Vous arrêtez votre activité web ? Je reprends la maintenance, l'hébergement et les sites WordPress de vos clients, à partir d'un seul client.",
-    eyebrow: "Transmission",
-    title: "Vous arrêtez votre activité web ? Je reprends vos clients et leurs sites.",
-    intro:
-      "Agence web, webmaster, développeur ou graphiste indépendant : le jour où vous partez à la retraite, ralentissez ou changez de métier, vos clients gardent un interlocuteur pour leur site, et vous êtes payé pour la clientèle que vous avez construite.",
-    headCta: "Parler de votre projet de cession",
-    scopeTitle: "Ce que je reprends",
-    scopeBullets: [
-      "La maintenance des sites : mises à jour, sauvegardes, sécurité, petites modifications demandées par vos clients.",
-      "L'hébergement et les noms de domaine, chez OVH, o2switch, Ionos ou ailleurs : je reprends le compte ou je migre, selon ce qui est le plus simple pour chaque client.",
-      "Les contrats en cours, repris tels qu'ils ont été signés ; leurs conditions se voient ensemble avant toute proposition.",
-      "Sites WordPress, quel que soit le constructeur (Divi, Elementor, Gutenberg, thème sur mesure). Les autres technologies s'étudient au cas par cas. Je reprends des contrats et des sites, sans salarié ni local.",
-    ],
-    sizeTitle: "À partir d'un seul client",
-    sizeBody:
-      "Vous n'avez pas besoin d'un gros portefeuille. Un seul contrat de maintenance, quelques sites hébergés, ou seulement la partie maintenance de votre activité si vous gardez la création : tout se discute.",
-    stepsTitle: "Comment se passe une reprise",
-    steps: [
-      {
-        title: "Un premier échange, confidentiel.",
-        body: "Vous me décrivez vos clients, leurs sites, leurs contrats et votre calendrier. Rien n'est dit à vos clients tant que vous ne l'avez pas décidé.",
+    brandRole: "Développeur web · Lille",
+    cta: "Parler de ma cession",
+    hero: {
+      eyebrow: "Transmission de clientèle web",
+      title: "Vous arrêtez votre activité web ?",
+      titleAccent: "Je reprends vos clients et leurs sites.",
+      lead: "Agence web, webmaster, développeur ou graphiste indépendant : le jour où vous partez à la retraite, ralentissez ou changez de métier, vos clients gardent un interlocuteur pour leur site, et vous êtes payé pour la clientèle que vous avez construite.",
+      howCta: "Comment se passe une reprise",
+      chips: ["À partir d'un seul client", "WordPress, Divi, Elementor", "Prix payé en deux temps"],
+    },
+    scope: {
+      eyebrow: "Ce que je reprends",
+      title: "Ce qui fait tourner les sites de vos clients.",
+      intro:
+        "Vous n'avez pas besoin d'un gros portefeuille. Un seul contrat de maintenance, quelques sites hébergés, ou seulement la partie maintenance de votre activité si vous gardez la création : tout se discute.",
+      maintenance: {
+        label: "Maintenance",
+        title: "La maintenance des sites",
+        ticks: ["Mises à jour", "Sauvegardes", "Sécurité", "Petites modifications demandées par vos clients"],
       },
-      {
-        title: "Une proposition écrite.",
-        body: "Après avoir vu les contrats et les sites, et si la reprise me paraît possible, je vous fais une proposition chiffrée, avec le calendrier de la transition.",
+      one: {
+        big: "1",
+        title: "client peut suffire.",
+        body: "Un seul contrat de maintenance peut se reprendre.",
       },
-      {
-        title: "Vous présentez la suite à vos clients.",
-        body: "Chaque client reçoit un message de votre part et donne son accord par écrit. C'est votre parole qui compte pour lui.",
+      hosting: {
+        label: "Hébergement",
+        title: "Hébergement et noms de domaine",
+        body: "Je reprends le compte ou je migre, selon ce qui est le plus simple pour chaque client.",
+        pills: ["OVH", "o2switch", "Ionos", "ailleurs"],
       },
-      {
-        title: "La signature.",
-        body: "L'acte de cession est signé et la première partie du prix vous est versée.",
+      contracts: {
+        label: "Contrats",
+        title: "Les contrats en cours",
+        body: "Repris tels qu'ils ont été signés ; leurs conditions se voient ensemble avant toute proposition.",
       },
-      {
-        title: "La transition.",
-        body: "Je reprends les accès un par un, en m'assurant que tout fonctionne ; vous restez joignable pendant une période de transition que nous fixons ensemble.",
+      tech: {
+        label: "Technologies",
+        title: "Sites WordPress, quel que soit le constructeur",
+        body: "Les autres technologies s'étudient au cas par cas.",
+        pills: ["Divi", "Elementor", "Gutenberg", "thème sur mesure"],
       },
-      {
-        title: "Le solde du prix.",
-        body: "Il vous est versé douze mois après la signature, selon les clients restés.",
+      note: "Je reprends des contrats et des sites, sans salarié ni local.",
+    },
+    steps: {
+      eyebrow: "Comment se passe une reprise",
+      title: "Six étapes, sur un calendrier fixé ensemble.",
+      intro: "Rien n'est dit à vos clients tant que vous ne l'avez pas décidé. Le prix vous est versé en deux temps.",
+      // paid : étape où une partie du prix est versée (pastille en accent).
+      items: [
+        {
+          title: "Un premier échange, confidentiel",
+          body: "Vous me décrivez vos clients, leurs sites, leurs contrats et votre calendrier.",
+        },
+        {
+          title: "Une proposition écrite",
+          body: "Après avoir vu les contrats et les sites, et si la reprise me paraît possible, une proposition chiffrée avec le calendrier de la transition.",
+        },
+        {
+          title: "Vous présentez la suite",
+          body: "Chaque client reçoit un message de votre part et donne son accord par écrit. C'est votre parole qui compte pour lui.",
+        },
+        { title: "La signature", body: "L'acte de cession est signé.", paid: "1re partie du prix versée" },
+        {
+          title: "La transition",
+          body: "Je reprends les accès un par un, en m'assurant que tout fonctionne ; vous restez joignable pendant une période fixée ensemble.",
+        },
+        {
+          title: "Le solde du prix",
+          body: "Douze mois après la signature, selon les clients restés.",
+          paid: "Solde versé",
+        },
+      ] as { title: string; body: string; paid?: string }[],
+    },
+    about: {
+      eyebrow: "Qui je suis",
+      title: "Une personne, pas une plateforme.",
+      body: "Développeur web à Lille, une dizaine d'années de web. C'est moi qui reprends vos clients et qui leur réponds. Je rachète pour mon propre compte ; je ne mets pas en relation vendeurs et acheteurs.",
+      portraitAlt: "Louis Rotellini",
+      caption: ["Louis Rotellini", "Lille"],
+      proofWp: {
+        k: "WordPress",
+        body: "Je maintiens aujourd'hui les sites WordPress d'une cliente : développement, mises à jour, sauvegardes, formulaires, référencement.",
       },
-    ],
-    aboutTitle: "Qui je suis",
-    aboutBody:
-      "Louis Rotellini, développeur web à Lille, une dizaine d'années de web. J'ai travaillé sur les sites de Decathlon, Damart, Blancheporte, Promod et, via une agence, Disneyland Paris, en mission freelance et en intégration front-end. J'ai intégré et développé sur plusieurs CMS, dont WordPress et Magento. C'est moi qui reprends vos clients et qui leur réponds : ils ont affaire à une personne, pas à une plateforme. Je rachète pour mon propre compte ; je ne mets pas en relation vendeurs et acheteurs.",
-    faqTitle: "Vos questions",
-    faq: [
-      {
-        q: "Combien vaut ma clientèle ?",
-        a: "Cela dépend surtout de ce qui revient chaque année (maintenance, hébergement), de l'ancienneté de vos clients et de l'état de leurs sites. Je ne donne pas de chiffre à l'aveugle : la proposition vient après avoir vu les contrats.",
+      proofPlugins: {
+        k: "2",
+        before: "extensions WordPress publiées sur wordpress.org, sous la marque Antwork : ",
+        links: [
+          { label: "Antwork Field Editor", href: "https://wordpress.org/plugins/antwork-field-editor/" },
+          { label: "Antwork Field Code", href: "https://wordpress.org/plugins/antwork-field-code/" },
+        ],
+        between: " et ",
+        after: ".",
       },
-      {
-        q: "Mes clients doivent-ils être d'accord ?",
-        a: "Oui, chacun, par écrit. C'est pourquoi le message vient de vous : un client qui connaît son prestataire depuis des années suit plus volontiers celui que ce prestataire lui recommande.",
+      proofCms: {
+        k: "Multi-CMS",
+        body: "Une dizaine d'années de web : j'ai intégré et développé sur plusieurs CMS, dont WordPress et Magento.",
       },
-      {
-        q: "Mes sites sont anciens, est-ce un problème ?",
-        a: "Pas en soi. Je regarde l'état de chaque site avant la proposition. Un site ancien qui fonctionne continue d'être maintenu ; une mise à niveau se propose quand la sécurité l'exige ou que le client la demande, jamais avant la fin de la transition.",
+      logosLabel:
+        "J'ai travaillé sur leurs sites · missions freelance · intégration front-end · Disneyland Paris via une agence",
+      folio: {
+        eyebrow: "Portfolio",
+        title: "louisrotellini.fr",
+        body: "Mes produits et mon parcours complet.",
       },
-      {
-        q: "Je veux continuer encore un peu, est-ce possible ?",
-        a: "Oui. On peut préparer la reprise des mois à l'avance, ou commencer par une partie de vos clients.",
-      },
-      {
-        q: "Je ne suis pas encore décidé.",
-        a: "Aucun souci. Un premier échange n'engage à rien, et vous pouvez revenir vers moi quand la question se posera.",
-      },
-    ],
-    contactTitle: "Contact",
-    contactBody:
-      "Écrivez-moi en quelques lignes : le nombre de sites et de clients, la technologie, l'hébergeur et l'échéance que vous avez en tête.",
-    contactCta: "M'écrire",
+    },
+    faq: {
+      eyebrow: "Vos questions",
+      title: "Ce qu'on me demande avant de se lancer.",
+      items: [
+        {
+          q: "Combien vaut ma clientèle ?",
+          a: "Cela dépend surtout de ce qui revient chaque année (maintenance, hébergement), de l'ancienneté de vos clients et de l'état de leurs sites. Je ne donne pas de chiffre à l'aveugle : la proposition vient après avoir vu les contrats.",
+        },
+        {
+          q: "Mes clients doivent-ils être d'accord ?",
+          a: "Oui, chacun, par écrit. C'est pourquoi le message vient de vous : un client qui connaît son prestataire depuis des années suit plus volontiers celui que ce prestataire lui recommande.",
+        },
+        {
+          q: "Mes sites sont anciens, est-ce un problème ?",
+          a: "Pas en soi. Je regarde l'état de chaque site avant la proposition. Un site ancien qui fonctionne continue d'être maintenu ; une mise à niveau se propose quand la sécurité l'exige ou que le client la demande, jamais avant la fin de la transition.",
+        },
+        {
+          q: "Je veux continuer encore un peu, est-ce possible ?",
+          a: "Oui. On peut préparer la reprise des mois à l'avance, ou commencer par une partie de vos clients.",
+        },
+        {
+          q: "Je ne suis pas encore décidé.",
+          a: "Aucun souci. Un premier échange n'engage à rien, et vous pouvez revenir vers moi quand la question se posera.",
+        },
+      ],
+    },
+    contact: {
+      eyebrow: "Contact",
+      title: "Parlons de vos clients.",
+      body: "Écrivez-moi en quelques lignes : un premier échange n'engage à rien.",
+      list: ["Le nombre de sites et de clients", "La technologie", "L'hébergeur", "L'échéance que vous avez en tête"],
+      hint: "Ouvre votre messagerie · louis.rotellini@gmail.com",
+    },
+    footer: {
+      rights: "© 2026 Louis Rotellini",
+      legal: "Mentions légales",
+      email: "louis.rotellini@gmail.com",
+    },
     mailSubject: "Cession de clientèle web",
     mailBody: `Bonjour Louis,
 

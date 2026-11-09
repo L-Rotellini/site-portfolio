@@ -24,6 +24,10 @@ export function localizedHref(locale: Locale, path: string): string {
 // l'accueil anglais au lieu d'une URL /en/... qui répondrait 404.
 export const frOnlyPaths: readonly string[] = ["/ceder-sa-clientele-web"];
 
+// Pages autonomes : elles rendent leur propre en-tête, <main> et pied de page, sans le menu
+// du portfolio, la palette ⌘K ni les réglages de son et d'accent (voir SiteShell).
+export const standalonePaths: readonly string[] = ["/ceder-sa-clientele-web"];
+
 // Balise <html lang> / hreflang associée à chaque locale.
 export const htmlLang: Record<Locale, string> = {
   fr: "fr",

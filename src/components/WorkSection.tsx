@@ -132,6 +132,8 @@ export default function WorkSection({
         ref={drawerRef}
         className={`drawer${open ? " is-open" : ""}`}
         aria-hidden={!open}
+        // Fermé, le tiroir reste dans le DOM hors écran : inert retire son bouton de la tabulation.
+        inert={!open}
         aria-label={dict.drawer.ariaLabel}
       >
         <div className="drawer__bar">

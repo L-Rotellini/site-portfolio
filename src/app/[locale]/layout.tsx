@@ -9,6 +9,7 @@ import { headers } from "next/headers";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import UiProvider from "@/components/UiProvider";
+import SiteShell from "@/components/SiteShell";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CommandPalette from "@/components/CommandPalette";
@@ -179,15 +180,20 @@ export default async function RootLayout({
 
         <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false} nonce={nonce}>
           <UiProvider>
-            <SiteHeader dict={dict.nav} banner={dict.agentBanner} locale={locale} home={home} />
-            <main id="top">{children}</main>
-            <SiteFooter dict={dict.footer} locale={locale} />
-            <CommandPalette
-              dict={dict.palette}
-              copiedMsg={dict.contact.copied}
-              locale={locale}
-              home={home}
-            />
+            <SiteShell
+              header={<SiteHeader dict={dict.nav} banner={dict.agentBanner} locale={locale} home={home} />}
+              footer={<SiteFooter dict={dict.footer} locale={locale} />}
+              overlay={
+                <CommandPalette
+                  dict={dict.palette}
+                  copiedMsg={dict.contact.copied}
+                  locale={locale}
+                  home={home}
+                />
+              }
+            >
+              {children}
+            </SiteShell>
           </UiProvider>
         </ThemeProvider>
 
