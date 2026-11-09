@@ -7,8 +7,6 @@ import { mailtoHref } from "@/lib/mailto";
 // Page de reprise de clientèle web : française uniquement, indexée, hors menu.
 const PATH = "/ceder-sa-clientele-web";
 
-export const dynamicParams = false;
-
 export function generateStaticParams() {
   return [{ locale: "fr" }];
 }
@@ -27,7 +25,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     // Pas d'hreflang : la page n'existe pas en anglais.
     alternates: { canonical: PATH, languages: {} },
-    robots: { index: true, follow: true },
+    // robots : hérité du layout (index, follow + directives googleBot).
     // Images : ./opengraph-image.tsx et ./twitter-image.tsx.
     openGraph: {
       type: "website",
