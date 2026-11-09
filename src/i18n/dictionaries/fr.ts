@@ -243,11 +243,17 @@ export const fr = {
     intro:
       "Informations légales relatives au site louisrotellini.fr, conformément à la loi pour la confiance dans l'économie numérique.",
     publisherTitle: "Éditeur",
-    publisherRole: "Louis Rotellini, AI Product Engineer.",
-    publisherLocation: "Lille / Paris, France.",
-    contactPrefix: "Contact : ",
+    publisherRole: "Louis Rotellini, entrepreneur individuel (EI).",
+    publisherLines: [
+      "SIREN : 800 503 476",
+      "Adresse : [ADRESSE À FOURNIR PAR LOUIS]",
+      "Téléphone : [TÉLÉPHONE À FOURNIR PAR LOUIS]",
+      "Directeur de la publication : Louis Rotellini",
+    ],
+    contactPrefix: "E-mail : ",
     hostTitle: "Hébergeur",
-    hostBody: "Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+    hostBody: "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.",
+    hostPhone: "Téléphone : +1 559 288 7060",
     ipTitle: "Propriété intellectuelle",
     ipBody:
       "L'ensemble des contenus présents sur ce site (textes, code, images, structure) est protégé par le droit d'auteur. Toute reproduction, même partielle, est soumise à autorisation préalable.",
@@ -262,8 +268,98 @@ export const fr = {
     contactTitle: "Contact",
     contactBody:
       "Pour toute question relative aux mentions légales ou à la protection des données : ",
-    lastUpdate: "Dernière mise à jour · Juillet 2026",
+    lastUpdate: "Dernière mise à jour · 9 novembre 2026",
     homeLink: "Accueil",
+  },
+
+  // Page /ceder-sa-clientele-web : française uniquement (hors menu, palette et pied de page).
+  cession: {
+    metaTitle: "Céder sa clientèle web : reprise de vos sites et clients",
+    metaDescription:
+      "Vous arrêtez votre activité web ? Je reprends la maintenance, l'hébergement et les sites WordPress de vos clients, à partir d'un seul client.",
+    eyebrow: "Transmission",
+    title: "Vous arrêtez votre activité web ? Je reprends vos clients et leurs sites.",
+    intro:
+      "Agence web, webmaster, développeur ou graphiste indépendant : le jour où vous partez à la retraite, ralentissez ou changez de métier, vos clients gardent un interlocuteur pour leur site, et vous êtes payé pour la clientèle que vous avez construite.",
+    headCta: "Parler de votre projet de cession",
+    scopeTitle: "Ce que je reprends",
+    scopeBullets: [
+      "La maintenance des sites : mises à jour, sauvegardes, sécurité, petites modifications demandées par vos clients.",
+      "L'hébergement et les noms de domaine, chez OVH, o2switch, Ionos ou ailleurs : je reprends le compte ou je migre, selon ce qui est le plus simple pour chaque client.",
+      "Les contrats en cours, repris tels qu'ils ont été signés ; leurs conditions se voient ensemble avant toute proposition.",
+      "Sites WordPress, quel que soit le constructeur (Divi, Elementor, Gutenberg, thème sur mesure). Les autres technologies s'étudient au cas par cas. Je reprends des contrats et des sites, sans salarié ni local.",
+    ],
+    sizeTitle: "À partir d'un seul client",
+    sizeBody:
+      "Vous n'avez pas besoin d'un gros portefeuille. Un seul contrat de maintenance, quelques sites hébergés, ou seulement la partie maintenance de votre activité si vous gardez la création : tout se discute.",
+    stepsTitle: "Comment se passe une reprise",
+    steps: [
+      {
+        title: "Un premier échange, confidentiel.",
+        body: "Vous me décrivez vos clients, leurs sites, leurs contrats et votre calendrier. Rien n'est dit à vos clients tant que vous ne l'avez pas décidé.",
+      },
+      {
+        title: "Une proposition écrite.",
+        body: "Après avoir vu les contrats et les sites, et si la reprise me paraît possible, je vous fais une proposition chiffrée, avec le calendrier de la transition.",
+      },
+      {
+        title: "Vous présentez la suite à vos clients.",
+        body: "Chaque client reçoit un message de votre part et donne son accord par écrit. C'est votre parole qui compte pour lui.",
+      },
+      {
+        title: "La signature.",
+        body: "L'acte de cession est signé et la première partie du prix vous est versée.",
+      },
+      {
+        title: "La transition.",
+        body: "Je reprends les accès un par un, en m'assurant que tout fonctionne ; vous restez joignable pendant une période de transition que nous fixons ensemble.",
+      },
+      {
+        title: "Le solde du prix.",
+        body: "Il vous est versé douze mois après la signature, selon les clients restés.",
+      },
+    ],
+    aboutTitle: "Qui je suis",
+    aboutBody:
+      "Louis Rotellini, développeur web à Lille, une dizaine d'années de web. J'ai travaillé sur les sites de Decathlon, Damart, Blancheporte, Promod et, via une agence, Disneyland Paris, en mission freelance et en intégration front-end. J'ai intégré et développé sur plusieurs CMS, dont WordPress et Magento. C'est moi qui reprends vos clients et qui leur réponds : ils ont affaire à une personne, pas à une plateforme. Je rachète pour mon propre compte ; je ne mets pas en relation vendeurs et acheteurs.",
+    faqTitle: "Vos questions",
+    faq: [
+      {
+        q: "Combien vaut ma clientèle ?",
+        a: "Cela dépend surtout de ce qui revient chaque année (maintenance, hébergement), de l'ancienneté de vos clients et de l'état de leurs sites. Je ne donne pas de chiffre à l'aveugle : la proposition vient après avoir vu les contrats.",
+      },
+      {
+        q: "Mes clients doivent-ils être d'accord ?",
+        a: "Oui, chacun, par écrit. C'est pourquoi le message vient de vous : un client qui connaît son prestataire depuis des années suit plus volontiers celui que ce prestataire lui recommande.",
+      },
+      {
+        q: "Mes sites sont anciens, est-ce un problème ?",
+        a: "Pas en soi. Je regarde l'état de chaque site avant la proposition. Un site ancien qui fonctionne continue d'être maintenu ; une mise à niveau se propose quand la sécurité l'exige ou que le client la demande, jamais avant la fin de la transition.",
+      },
+      {
+        q: "Je veux continuer encore un peu, est-ce possible ?",
+        a: "Oui. On peut préparer la reprise des mois à l'avance, ou commencer par une partie de vos clients.",
+      },
+      {
+        q: "Je ne suis pas encore décidé.",
+        a: "Aucun souci. Un premier échange n'engage à rien, et vous pouvez revenir vers moi quand la question se posera.",
+      },
+    ],
+    contactTitle: "Contact",
+    contactBody:
+      "Écrivez-moi en quelques lignes : le nombre de sites et de clients, la technologie, l'hébergeur et l'échéance que vous avez en tête.",
+    contactCta: "Écrire à Louis",
+    mailSubject: "Cession de clientèle web",
+    mailBody: `Bonjour Louis,
+
+Je pense à céder ma clientèle web.
+
+Nombre de clients et de sites :
+Technologie (WordPress, Divi, autre) :
+Hébergeur :
+Échéance envisagée :
+
+Merci,`,
   },
 
   mail: {

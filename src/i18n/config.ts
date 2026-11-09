@@ -20,6 +20,10 @@ export function localizedHref(locale: Locale, path: string): string {
   return `${prefix}${path}`;
 }
 
+// Pages servies en français seulement : le sélecteur de langue renvoie vers
+// l'accueil anglais au lieu d'une URL /en/... qui répondrait 404.
+export const frOnlyPaths: readonly string[] = ["/ceder-sa-clientele-web"];
+
 // Balise <html lang> / hreflang associée à chaque locale.
 export const htmlLang: Record<Locale, string> = {
   fr: "fr",

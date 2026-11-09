@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useUi } from "@/components/UiProvider";
 import { useFocusTrap } from "@/lib/useFocusTrap";
 import { scrollToId } from "@/lib/scroll";
-import { localizedHref, type Locale } from "@/i18n/config";
+import { frOnlyPaths, localizedHref, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/fr";
 
 const SECTION_IDS = ["work", "live", "machine", "approach", "about", "contact"] as const;
@@ -36,7 +36,8 @@ export default function SiteHeader({
   // Lien vers la même page dans l'autre locale.
   const otherLocale: Locale = locale === "fr" ? "en" : "fr";
   const basePath = pathname.replace(/^\/en(?=\/|$)/, "") || "/";
-  const switchHref = localizedHref(otherLocale, basePath) || "/";
+  const frOnly = frOnlyPaths.includes(basePath);
+  const switchHref = localizedHref(otherLocale, frOnly ? "/" : basePath) || "/";
 
   const hrefFor = (id: SectionId) => (onHome ? `#${id}` : `${home === "/" ? "/" : home}#${id}`);
 
@@ -92,7 +93,8 @@ export default function SiteHeader({
 
   return (
     <>
-      <a className="skip" href="#work">
+      {/* Hors accueil, #work n'existe pas : le lien d'évitement vise <main id="top">. */}
+      <a className="skip" href={onHome ? "#work" : "#top"}>
         {dict.skip}
       </a>
 
@@ -122,7 +124,7 @@ export default function SiteHeader({
                 {dict.links[id]}
               </a>
             ))}
-            <Link className="nav__link" href={switchHref} aria-label={dict.switchAria} rel="alternate">
+            <Link className="nav__link" href={switchHref} aria-label={dict.switchAria} rel={frOnly ? undefined : "alternate"}>
               {dict.switchLabel}
             </Link>
           </nav>
@@ -150,7 +152,7 @@ export default function SiteHeader({
         <button onClick={toggleAgentView}>{banner.exit}</button>
       </div>
 
-      <div ref={menuRef} className={`mobile-menu${menuOpen ? " is-open" : ""}`} aria-hidden={!menuOpen}>
+      <div ref={menuRef} className={`mobile-menu${menuOpen ? " is-open" : ""}`} aria-hidden={!menuOpen} inert={!menuOpen}>
         <nav className="mm__nav" aria-label={dict.mobileNav}>
           {SECTION_IDS.map((id) => (
             <a

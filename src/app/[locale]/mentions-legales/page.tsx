@@ -62,7 +62,9 @@ export default async function MentionsLegales({
           <div>
             <h2>{t.publisherTitle}</h2>
             <p>{t.publisherRole}</p>
-            <p>{t.publisherLocation}</p>
+            {t.publisherLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
             <p>
               {t.contactPrefix}
               <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
@@ -75,6 +77,7 @@ export default async function MentionsLegales({
           <div>
             <h2>{t.hostTitle}</h2>
             <p>{t.hostBody}</p>
+            <p>{t.hostPhone}</p>
           </div>
         </article>
 
