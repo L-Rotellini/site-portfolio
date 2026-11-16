@@ -7,8 +7,9 @@ import { pageMetadata } from "@/lib/site";
 // Prototype : docs/refonte/prototype/IA.html
 export const metadata = pageMetadata({
   path: "/ia",
-  title: "Produits IA · louisrotellini.fr",
-  description: "Je conçois et mets en production des outils IA pour des usages métier concrets.",
+  title: "Louis Rotellini · AI Product Engineer à Lille",
+  description:
+    "Je conçois et mets en production des outils IA pour des usages métier concrets : DocTap, RelancIA, un moteur de scoring et une démo d'évaluation à essayer.",
 });
 
 export default function IA() {

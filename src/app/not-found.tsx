@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Footer, Header } from "@/components/Chrome";
 
 // Page 404 : absente du prototype, réduite au strict nécessaire dans le style commun.
-export const metadata = { title: { absolute: "Page introuvable · louisrotellini.fr" } };
+export const metadata = { title: { absolute: "Page introuvable · Louis Rotellini" } };
 
 export default function NotFound() {
   return (

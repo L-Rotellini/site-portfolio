@@ -9,7 +9,7 @@ const PATH = "/maintenance-site-wordpress";
 
 export const metadata = pageMetadata({
   path: PATH,
-  title: "Maintenance de site WordPress · louisrotellini.fr",
+  title: "Maintenance de site WordPress · Louis Rotellini",
   description:
     "Je reprends la maintenance et les mises à jour de votre site WordPress. Une personne, pas une plateforme : vous avez affaire à moi, du premier mail aux mises à jour.",
 });

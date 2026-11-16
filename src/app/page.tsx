@@ -8,7 +8,7 @@ export const metadata = pageMetadata({
   path: "/",
   title: "Louis Rotellini · développeur full-stack freelance à Lille",
   description:
-    "Je développe vos pages, vos sites et vos applications web, de la conception à la mise en ligne. Pour Damart depuis 2020, pour Decathlon depuis 2023, et pour mes propres produits.",
+    "Développeur full-stack freelance à Lille : je développe vos pages, vos sites et vos applications web. Pour Damart depuis 2020, pour Decathlon depuis 2023.",
 });
 
 export default function Accueil() {
