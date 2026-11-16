@@ -30,13 +30,20 @@ export default function Maintenance() {
         <div className="hero">
           <div className="wrap hero__in">
             <div>
-              <h1>Votre prestataire web s&apos;arrête ? Je prends le relais pour votre site.</h1>
+              <h1>
+                Votre prestataire web s&apos;arrête ? Je prends le relais pour
+                votre site.
+              </h1>
               <p className="lede">
-                Je reprends la maintenance et les mises à jour de votre site WordPress. Une personne, pas une
-                plateforme : vous avez affaire à moi, du premier mail aux mises à jour.
+                Je reprends la maintenance et les mises à jour de votre site
+                WordPress. Une personne, pas une plateforme : vous avez affaire
+                à moi, du premier mail aux mises à jour.
               </p>
             </div>
-            <Card role="Développeur web indépendant depuis 2017, à Lille" cta="M'écrire un mail" />
+            <Card
+              role="Développeur web indépendant depuis 2017, à Lille"
+              cta="M'écrire un mail"
+            />
           </div>
         </div>
 
@@ -51,37 +58,51 @@ export default function Maintenance() {
 
         <section aria-labelledby="t-meme">
           <div className="wrap">
-            <h2 id="t-meme">Votre site reste le vôtre, tel que vous le connaissez.</h2>
-            <p className="intro">Je ne vous impose ni nouvel outil, ni refonte.</p>
+            <h2 id="t-meme">
+              Votre site reste le vôtre, tel que vous le connaissez.
+            </h2>
+            <p className="intro">
+              Je ne vous impose ni nouvel outil, ni refonte.
+            </p>
             <ul className="rows">
               <li className="row">
                 <h3>Votre site</h3>
                 <div>
                   <p>
-                    Il garde son outil de mise en page : Divi, Elementor ou un autre. Les personnes qui publient vos
-                    articles et vos pages continuent, avec leurs accès habituels. Pas de nouveau logiciel à apprendre.
+                    Il garde son outil de mise en page : Divi, Elementor ou un
+                    autre. Les personnes qui publient vos articles et vos pages
+                    continuent, avec leurs accès habituels. Pas de nouveau
+                    logiciel à apprendre.
                   </p>
                 </div>
               </li>
               <li className="row">
                 <h3>Un interlocuteur</h3>
                 <div>
-                  <p>Par mail ou par téléphone, vous parlez toujours à la même personne.</p>
+                  <p>
+                    Par mail ou par téléphone, vous parlez toujours à la même
+                    personne.
+                  </p>
                 </div>
               </li>
               <li className="row">
                 <h3>L&apos;hébergement</h3>
                 <div>
                   <p>
-                    L&apos;espace où votre site est stocké est à votre nom. S&apos;il est aujourd&apos;hui à celui de
-                    votre prestataire, nous le passons au vôtre ensemble. Chez OVH, o2switch, Ionos ou ailleurs.
+                    L&apos;espace où votre site est stocké est à votre nom.
+                    S&apos;il est aujourd&apos;hui à celui de votre prestataire,
+                    nous le passons au vôtre ensemble. Chez OVH, o2switch, Ionos
+                    ou ailleurs.
                   </p>
                 </div>
               </li>
               <li className="row">
                 <h3>Le nom de domaine</h3>
                 <div>
-                  <p>L&apos;adresse de votre site ne change pas, et elle est à votre nom.</p>
+                  <p>
+                    L&apos;adresse de votre site ne change pas, et elle est à
+                    votre nom.
+                  </p>
                 </div>
               </li>
             </ul>
@@ -90,7 +111,9 @@ export default function Maintenance() {
 
         <section className="how" aria-labelledby="t-quot">
           <div className="wrap">
-            <h2 id="t-quot">Vous m&apos;envoyez vos contenus par mail. Je les mets en ligne.</h2>
+            <h2 id="t-quot">
+              Vous m&apos;envoyez vos contenus par mail. Je les mets en ligne.
+            </h2>
             <ol className="steps">
               <li>
                 <h3>Vous m&apos;écrivez</h3>
@@ -106,18 +129,22 @@ export default function Maintenance() {
               </li>
             </ol>
             <p className="tools">
-              <strong>En coulisse, je veille sur votre site :</strong> j&apos;installe les corrections de WordPress et
-              de ses extensions, notamment de sécurité, et je fais des sauvegardes régulières, une copie complète pour
-              le remettre en état si un problème survient.
+              <strong>En coulisse, je veille sur votre site :</strong>{" "}
+              j&apos;installe les corrections de WordPress et de ses extensions,
+              notamment de sécurité, et je fais des sauvegardes régulières, une
+              copie complète pour le remettre en état si un problème survient.
             </p>
           </div>
         </section>
 
         <section aria-labelledby="t-relais">
           <div className="wrap">
-            <h2 id="t-relais">Une transition préparée avec votre prestataire actuel.</h2>
+            <h2 id="t-relais">
+              Une transition préparée avec votre prestataire actuel.
+            </h2>
             <p className="intro">
-              Rien n&apos;est modifié sur votre site avant l&apos;état des lieux et la sauvegarde complète.
+              Rien n&apos;est modifié sur votre site avant l&apos;état des lieux
+              et la sauvegarde complète.
             </p>
             <ol className="steps steps--5">
               <li>
@@ -126,15 +153,22 @@ export default function Maintenance() {
               </li>
               <li>
                 <h3>Un état des lieux</h3>
-                <p>Je regarde votre site, ses réglages et les demandes en cours.</p>
+                <p>
+                  Je regarde votre site, ses réglages et les demandes en cours.
+                </p>
               </li>
               <li>
                 <h3>Une sauvegarde complète</h3>
-                <p>Une copie de tout votre site, avant ma première intervention.</p>
+                <p>
+                  Une copie de tout votre site, avant ma première intervention.
+                </p>
               </li>
               <li>
                 <h3>La remise des accès</h3>
-                <p>Votre prestataire me transmet les accès, et reste joignable pendant la transition.</p>
+                <p>
+                  Votre prestataire me transmet les accès, et reste joignable
+                  pendant la transition.
+                </p>
               </li>
               <li>
                 <h3>Je prends le relais</h3>
@@ -148,8 +182,9 @@ export default function Maintenance() {
           <div className="wrap">
             <h2 id="t-qui">Mes références.</h2>
             <p className="intro">
-              Développeur web indépendant depuis 2017, je mets en ligne régulièrement des pages à partir des textes que
-              mes clients m&apos;envoient.
+              Développeur web indépendant depuis 2017, je mets en ligne
+              régulièrement des pages à partir des textes que mes clients
+              m&apos;envoient.
             </p>
             <ul className="pages">
               <li className="page">
@@ -157,29 +192,46 @@ export default function Maintenance() {
                 <div>
                   <h3>Deux extensions WordPress publiées</h3>
                   <p>
-                    Je publie deux extensions sur l&apos;annuaire officiel de WordPress, sous la marque Antwork. Leur
-                    code est public et relu par WordPress.org.
+                    Je publie deux extensions sur l&apos;annuaire officiel de
+                    WordPress, sous la marque Antwork. Leur code est public et
+                    relu par WordPress.org.
                   </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://wordpress.org/plugins/antwork-field-editor/">
+                  <a
+                    className="open"
+                    href="https://wordpress.org/plugins/antwork-field-editor/"
+                  >
                     Antwork Field Editor
                   </a>
-                  <a className="open" href="https://wordpress.org/plugins/antwork-field-code/">
+                  <a
+                    className="open"
+                    href="https://wordpress.org/plugins/antwork-field-code/"
+                  >
                     Antwork Field Code
                   </a>
                   <span className="host">wordpress.org</span>
                 </div>
               </li>
               <li className="page">
-                <Shot src="/travaux/damart-be-fetes-fr.jpg" alt="Capture de la page d'accueil de Damart Belgique" />
+                <Shot
+                  src="/travaux/damart-be-fetes-fr.jpg"
+                  alt="Capture de la page d'accueil de Damart Belgique"
+                />
                 <div>
                   <Logo name="damart" className="page__logo" />
                   <h3>Damart, depuis 2020</h3>
-                  <p>Leurs pages de campagne pour la Belgique et le Luxembourg, et des pages de service pour la France.</p>
+                  <p>
+                    Leurs pages de campagne pour la Belgique et le Luxembourg,
+                    et des pages de service pour la France.
+                  </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" rel="nofollow" href="https://www.damart.be/fr_be">
+                  <a
+                    className="open"
+                    rel="nofollow"
+                    href="https://www.damart.be/fr_be"
+                  >
                     Ouvrir damart.be
                   </a>
                 </div>
@@ -193,12 +245,17 @@ export default function Maintenance() {
                   <Logo name="decathlon" className="page__logo" />
                   <h3>Decathlon, depuis 2023</h3>
                   <p>
-                    Les pages qui présentent les offres de nombreux services. J&apos;entretiens aussi plusieurs pages
-                    officielles du site, dont les rappels de produits.
+                    Les pages qui présentent les offres de nombreux services.
+                    J&apos;entretiens aussi plusieurs pages officielles du site,
+                    dont les rappels de produits.
                   </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" rel="nofollow" href="https://www.decathlon.fr/lp/i/rappels-produits">
+                  <a
+                    className="open"
+                    rel="nofollow"
+                    href="https://www.decathlon.fr/lp/i/rappels-produits"
+                  >
                     Ouvrir une de ces pages
                   </a>
                 </div>
@@ -207,18 +264,89 @@ export default function Maintenance() {
                 <ShotGroup name="wordpress" />
                 <div>
                   <h3>Des sites WordPress entretenus aujourd&apos;hui</h3>
-                  <p>Je maintiens des sites WordPress pour mes clients : mises à jour, sauvegardes, formulaires.</p>
+                  <p>
+                    Je maintiens des sites WordPress pour mes clients : mises à
+                    jour, sauvegardes, formulaires.
+                  </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" rel="nofollow" href="https://quai38-lille.fr/">
+                  <a
+                    className="open"
+                    rel="nofollow"
+                    href="https://quai38-lille.fr/"
+                  >
                     Quai 38, Lille
                   </a>
-                  <a className="open" rel="nofollow" href="https://www.lespetitesexperiences.com">
+                  <a
+                    className="open"
+                    rel="nofollow"
+                    href="https://www.lespetitesexperiences.com"
+                  >
                     Les Petites Expériences
                   </a>
-                  <a className="open" rel="nofollow" href="https://www.lespetitesjambes.com">
+                  <a
+                    className="open"
+                    rel="nofollow"
+                    href="https://www.lespetitesjambes.com"
+                  >
                     Les Petites Jambes
                   </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section aria-labelledby="t-plus">
+          <div className="wrap">
+            <h2 id="t-plus">Et plus tard, si vous le souhaitez.</h2>
+            <p className="intro">
+              Rien de cela n&apos;est nécessaire au bon fonctionnement de votre
+              site. Ce sont des pistes, à évoquer quand vous voulez.
+            </p>
+            <ul className="rows">
+              <li className="row">
+                <h3>Ne plus recopier ce qui revient chaque semaine</h3>
+                <div>
+                  <p>
+                    Une offre d&apos;emploi vous arrive en PDF : elle peut être
+                    publiée sur votre site toute seule, mise en forme comme les
+                    autres. Si vous préférez, elle attend votre accord avant de
+                    paraître.
+                  </p>
+                </div>
+              </li>
+              <li className="row">
+                <h3>Faire évoluer vos outils de communication</h3>
+                <div>
+                  <p>
+                    Par exemple : une lettre d&apos;information préparée à
+                    partir de vos dernières actualités, un texte proposé en
+                    version facile à lire puis relu par vos équipes, ou les
+                    réponses aux questions qui reviennent le plus souvent.
+                  </p>
+                </div>
+              </li>
+              <li className="row">
+                <h3>Être trouvé sur ChatGPT ou Gemini</h3>
+                <div>
+                  <p>
+                    Certaines personnes posent désormais leurs questions à ces
+                    assistants plutôt que de chercher sur Google. Je peux
+                    présenter votre site de façon à ce qu&apos;ils le lisent
+                    bien et reprennent vos informations dans leurs réponses.
+                  </p>
+                </div>
+              </li>
+              <li className="row">
+                <h3>Conseil et mise en place</h3>
+                <div>
+                  <p>
+                    Je conçois et mets en ligne des outils qui s&apos;appuient
+                    sur l&apos;intelligence artificielle, comme DocTap. Je peux
+                    vous aider à choisir ce qui vous est utile, puis mettre
+                    l&apos;outil en place.
+                  </p>
                 </div>
               </li>
             </ul>
@@ -239,7 +367,9 @@ export default function Maintenance() {
         </section>
       </main>
 
-      <Footer links={[{ href: "/mentions-legales", label: "Mentions légales" }]} />
+      <Footer
+        links={[{ href: "/mentions-legales", label: "Mentions légales" }]}
+      />
     </>
   );
 }
