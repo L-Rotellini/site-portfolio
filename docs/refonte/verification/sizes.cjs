@@ -1,6 +1,6 @@
 // Pour chaque capture .page__shot : largeur affichée, sizes, variante réellement chargée (currentSrc).
 const { chromium } = require('playwright');
-const BASE = process.env.BASE || 'https://www.louisrotellini.fr';
+const BASE = process.env.BASE || 'http://localhost:3100';
 const PAGES = ['/', '/ia', '/maintenance-site-wordpress', '/ceder-sa-clientele-web'];
 const CASES = [
   { label: '390 px, DPR 3 (iPhone)', width: 390, height: 844, dpr: 3 },
