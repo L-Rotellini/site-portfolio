@@ -24,8 +24,8 @@ Le `<title>` de chaque page reprend celui du prototype, « louisrotellini.fr » 
 - **Liens entre pages : ceux du prototype, rien de plus.** `Accueil.html` devient `/`, `IA.html` devient `/ia`, `Mentions-legales.html` devient `/mentions-legales`. Les `href="#"` de la marque en en-tete pointent vers la page elle-meme sur Maintenance et Ceder (ces deux pages ne menent pas a l'accueil par l'en-tete), vers `/` ailleurs. L'accueil ne lie ni `/maintenance-site-wordpress` ni `/ceder-sa-clientele-web` ni `/accessibilite`.
 - **Les `noindex` du prototype ne sont pas repris.** Les six pages sont indexables et entrent dans `sitemap.ts`.
 - **Telephone.** Il n'apparait en clair dans le HTML servi que sur `/mentions-legales` (obligation legale). Sur `/maintenance-site-wordpress`, le bouton « Afficher mon numero de telephone » du prototype devient un composant client : le numero n'est ni dans le HTML initial ni en clair dans le bundle (meme principe d'assemblage que le script du prototype), le lien `tel:` recoit le focus apres le clic.
-- **La demo de `/ia`.** La ligne « La demo : un gate d'eval », marquee « [demo a brancher a la mise en production] », recoit le composant `LiveGate` existant et sa route `src/app/api/gate/route.ts`, sans changer la route ni ses plafonds, rhabille dans le style commun. Le marqueur entre crochets disparait. C'est le seul endroit ou un texte de l'ancien site (les libelles de la demo dans `fr.ts`) est conserve.
-- **Mentions legales.** Le texte du prototype fait foi. Comme la demo appelle l'API d'Anthropic, le paragraphe de l'ancienne page qui decrit ce traitement (ce qui est envoye, a qui, combien de temps) est repris tel quel sous « Donnees personnelles » ; s'il n'existe pas dans l'ancienne page, le signaler dans la PR sans l'inventer.
+- **Pas de demo sur `/ia`.** La demo « gate d'eval » et sa route `/api/gate` ont ete retirees le 16/11/2026 : le site n'appelle plus aucune API et n'a plus de cle a tenir.
+- **Mentions legales.** Le texte du prototype fait foi.
 - **Images.** `prod/…` dans le prototype correspond a `public/…` du depot (memes fichiers). Les captures de `docs/refonte/prototype/travaux/` vont dans `public/travaux/`. Toutes passent par `next/image` avec largeur, hauteur et `alt` du prototype.
 - **Deux captures manquent au depot** : `travaux/decathlon-location-velo-lille.jpg` (la page https://www.decathlon.fr/location-velo-lille_lp-W7DKMI) et `travaux/damart-be-fetes-fr.jpg` (l'accueil de https://www.damart.be/fr_be). Les capturer avec Playwright en 1280 de large, haut de page, sans bandeau de cookies, au meme rapport que les autres captures de `.page__shot`. Si le site bloque la capture, poser a la place le carre de texte `.page__shot--txt` (« Decathlon », « Damart ») et le dire dans la PR : Louis fournira les fichiers.
 - **Ce qui part du depot** : les composants de l'ancien one-page (`Hero`, `Manifesto`, `MachineSection`, `WorkSection`, `ApproachSection`, `AboutSection`, `ContactSection`, `CommandPalette`, `UiProvider`, `SiteShell` et ce qui ne sert plus), `src/data/products.ts` et ses traductions, les dependances devenues inutiles (`framer-motion`, `next-themes`, `geist`, `prism-react-renderer`, `lucide-react` si plus rien ne les importe). `archive/` ne bouge pas.
@@ -40,12 +40,12 @@ Le `<title>` de chaque page reprend celui du prototype, « louisrotellini.fr » 
 
 ## Verification, a porter dans la PR
 
-1. **Texte** : un script extrait le texte visible du `<main>` de chaque page du prototype et de la page rendue, et les compare ; la PR montre zero ecart (hors la ligne de la demo et le paragraphe des mentions legales cites plus haut).
+1. **Texte** : un script extrait le texte visible du `<main>` de chaque page du prototype et de la page rendue, et les compare ; la PR montre zero ecart.
 2. **Captures** Playwright de chaque page a 390 et 1280 px, a cote de la capture du fichier du prototype au meme format.
 3. **Liens** : chaque lien externe du prototype est present avec la meme adresse ; chaque lien interne repond 200.
 4. **Telephone** : `curl` de `/`, `/ia`, `/accessibilite`, `/ceder-sa-clientele-web` et `/maintenance-site-wordpress` ne contient aucune suite de chiffres du numero ; un test Playwright clique le bouton et lit le lien `tel:`.
 5. **Redirections** : `/en` et `/en/mentions-legales` repondent 307 vers `/` et `/mentions-legales`.
-6. Apres la mise en production : les six adresses repondent 200 sur https://louisrotellini.fr, la demo de `/ia` rend un verdict.
+6. Apres la mise en production : les six adresses repondent 200 sur https://louisrotellini.fr.
 
 ## Hors perimetre
 

@@ -10,7 +10,6 @@
 - [React](https://react.dev) 19
 - Une seule feuille de style, `src/app/site.css`, reprise du prototype
 - Bricolage Grotesque auto-hébergée par `next/font`
-- La démo du gate d'éval de `/ia` appelle l'API d'Anthropic (`src/app/api/gate/route.ts`, clé dans `ANTHROPIC_API_KEY`)
 
 ---
 
