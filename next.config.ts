@@ -26,6 +26,11 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   images: {
+    // 384 et 512 en tête de deviceSizes : les vignettes .page__shot (268 à 348 px affichés) ont une
+    // variante proche de leur taille, même si sizes contient « vw » (next/image retire alors du srcset
+    // tout ce qui est sous deviceSizes[0]). 384 quitte imageSizes pour ne pas être en double.
+    deviceSizes: [384, 512, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
     // Autorise le rendu des placeholders SVG (logo fourmi) via next/image.
     // Neutralisé par une CSP sandbox dédiée : aucun script ne peut s'exécuter.
     dangerouslyAllowSVG: true,

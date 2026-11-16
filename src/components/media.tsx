@@ -40,6 +40,13 @@ const SHOTS = {
   "/projects/assistant-tri-offres-desktop.jpg": [2616, 1661],
 } as const;
 
+// Largeur affichée de l'image, d'après site.css (.page, .wrap, .page__shot avec sa bordure de 1px) :
+// - jusqu'à 560px, une colonne : la largeur de l'écran moins les gouttières de .wrap (20px de chaque
+//   côté jusqu'à 500px, 4vw au-delà, soit au plus 2,4px d'écart) et la bordure ;
+// - de 561 à 900px, colonne de 200px ; au-delà, colonne de 270px (bordure déduite).
+// Les variantes 384 et 512 viennent de images.deviceSizes (next.config.ts).
+const SHOT_SIZES = "(max-width: 560px) calc(100vw - 42px), (max-width: 900px) 198px, 268px";
+
 export function Shot({ src, alt }: { src: keyof typeof SHOTS; alt: string }) {
   const [width, height] = SHOTS[src];
   return (
@@ -49,7 +56,7 @@ export function Shot({ src, alt }: { src: keyof typeof SHOTS; alt: string }) {
         alt={alt}
         width={width}
         height={height}
-        sizes="(max-width: 560px) 100vw, (max-width: 900px) 200px, 270px"
+        sizes={SHOT_SIZES}
       />
     </div>
   );
