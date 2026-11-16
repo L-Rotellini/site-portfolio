@@ -25,15 +25,15 @@ function mapProtoHref(href, route) {
   return href;
 }
 
-async function extract(page, isProto, route) {
-  return page.evaluate(({ isProto, route }) => {
+async function extract(page) {
+  return page.evaluate(() => {
     // Exclusions prévues par la note : la ligne de la démo de /ia.
     document.querySelectorAll('.gate').forEach((e) => e.remove());
     document.querySelectorAll('.state').forEach((e) => { if (e.textContent.includes('[démo')) e.remove(); });
     const text = document.body.innerText.split('\n').map((l) => l.replace(/[ \t\r]+/g, ' ').trim()).filter(Boolean);
     const links = [...document.querySelectorAll('a[href]')].map((a) => ({ href: a.getAttribute('href'), text: a.textContent.trim() }));
     return { text, links, title: document.title };
-  }, { isProto, route });
+  });
 }
 
 (async () => {
@@ -63,13 +63,12 @@ async function extract(page, isProto, route) {
         await page.waitForTimeout(300);
         await page.screenshot({ path: `${OUT}/${kind}${route === '/' ? '-accueil' : route.replace(/\//g, '-')}-${w}.png`, fullPage: true });
       }
-      r[kind] = await extract(page, kind === 'proto', route);
+      r[kind] = await extract(page);
       await ctx.close();
     }
     // Texte
     const a = r.proto.text, b = r.site.text;
     const diff = [];
-    const max = Math.max(a.length, b.length);
     let i = 0, j = 0;
     while (i < a.length || j < b.length) {
       if (a[i] === b[j]) { i++; j++; continue; }

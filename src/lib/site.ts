@@ -28,6 +28,12 @@ export function pageMetadata({
       title,
       description,
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      site: "@louisrotellini",
+      creator: "@louisrotellini",
+      title,
+      description,
+    },
   };
 }
