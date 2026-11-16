@@ -54,21 +54,6 @@ export default function MentionsLegales() {
               <li>Aucune création de profil utilisateur</li>
               <li>Aucun cookie publicitaire</li>
             </ul>
-            <p>
-              La démonstration de la page /ia envoie le texte que vous y saisissez (600 caractères au plus) à
-              Anthropic Ireland, Limited, qui le fait traiter, notamment aux États-Unis, par Anthropic, PBC, dont le
-              modèle Claude l&apos;évalue. Ce transfert est encadré par les clauses contractuelles types de la
-              Commission européenne ; une copie peut être demandée à l&apos;éditeur. Ce site ne conserve pas ce
-              texte. Anthropic indique le supprimer sous 30 jours au plus, sauf s&apos;il est signalé comme contraire
-              à ses conditions d&apos;usage (conservation jusqu&apos;à 2 ans) ou si la loi l&apos;impose, et ne pas
-              l&apos;utiliser pour entraîner ses modèles. Votre adresse IP sert à limiter le nombre d&apos;essais : ce
-              site ne l&apos;écrit dans aucun fichier ni aucune base, elle reste en mémoire du serveur au plus
-              jusqu&apos;à son redémarrage, et l&apos;hébergeur la traite pour acheminer la requête. Finalité : faire
-              fonctionner la démonstration ; base légale : l&apos;intérêt légitime de l&apos;éditeur. Vous pouvez
-              demander l&apos;accès à vos données, leur rectification ou leur effacement à l&apos;adresse
-              ci-dessous, et saisir la CNIL (cnil.fr). Ne saisissez aucune donnée personnelle dans cette
-              démonstration.
-            </p>
             <h2>Contact</h2>
             <p>
               Pour toute question relative aux mentions légales ou à la protection des données :{" "}

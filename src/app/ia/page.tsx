@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "@/components/Chrome";
-import LiveGate from "@/components/LiveGate";
-import { Card, Shot, TextShot } from "@/components/media";
+import { Card, Shot } from "@/components/media";
 import { pageMetadata } from "@/lib/site";
 
 // Prototype : docs/refonte/prototype/IA.html
@@ -9,7 +8,7 @@ export const metadata = pageMetadata({
   path: "/ia",
   title: "Louis Rotellini · AI Product Engineer à Lille",
   description:
-    "Je conçois et mets en production des outils IA pour des usages métier concrets : DocTap, RelancIA, un moteur de scoring et une démo d'évaluation à essayer.",
+    "Je conçois et mets en production des outils IA pour des usages métier concrets. DocTap en production, RelancIA, Horizon et un moteur de scoring.",
 });
 
 export default function IA() {
@@ -145,21 +144,6 @@ export default function IA() {
                 </div>
               </li>
 
-              <li className="page">
-                <TextShot label="Gate d'éval" />
-                <div>
-                  <h3>La démo : un gate d&apos;éval</h3>
-                  <p>
-                    Décrivez une fonctionnalité IA : un modèle la juge en direct contre quatre règles éliminatoires
-                    (évals, relecture humaine, coût borné, gestion d&apos;échec), et dit ce qui manque quand elle
-                    échoue.
-                  </p>
-                  <p className="proof">
-                    La démo est elle-même plafonnée : 6 essais, 600 caractères, verdict calculé côté serveur.
-                  </p>
-                </div>
-                <LiveGate />
-              </li>
             </ul>
           </div>
         </section>

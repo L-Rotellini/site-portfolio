@@ -8,11 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --test src/lib/gate.test.mjs"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.111.0",
     "@vercel/analytics": "^1.5.0",
     "next": "^15.5.15",
     "react": "^19.1.0",

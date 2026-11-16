@@ -27,9 +27,6 @@ function mapProtoHref(href, route) {
 
 async function extract(page) {
   return page.evaluate(() => {
-    // Exclusions prévues par la note : la ligne de la démo de /ia.
-    document.querySelectorAll('.gate').forEach((e) => e.remove());
-    document.querySelectorAll('.state').forEach((e) => { if (e.textContent.includes('[démo')) e.remove(); });
     const text = document.body.innerText.split('\n').map((l) => l.replace(/[ \t\r]+/g, ' ').trim()).filter(Boolean);
     const links = [...document.querySelectorAll('a[href]')].map((a) => ({ href: a.getAttribute('href'), text: a.textContent.trim() }));
     return { text, links, title: document.title };
@@ -38,7 +35,7 @@ async function extract(page) {
 
 (async () => {
   const browser = await chromium.launch();
-  const report = { pages: {}, csp: {}, keyboard: {}, phone: {}, gate: null };
+  const report = { pages: {}, csp: {}, keyboard: {}, phone: {} };
 
   for (const [route, file] of PAGES) {
     const r = { };
@@ -143,21 +140,6 @@ async function extract(page) {
   }
 
   // Démo /ia : un verdict s'affiche, sans violation de CSP.
-  {
-    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-    const page = await ctx.newPage();
-    const errors = [];
-    page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
-    await page.addInitScript(() => document.addEventListener('securitypolicyviolation', (e) => console.error('CSP violation: ' + e.violatedDirective)));
-    await page.goto(SITE + '/ia', { waitUntil: 'networkidle' });
-    await page.getByRole('button', { name: '→ OCR · évals · relecture · coût plafonné · réessais' }).click();
-    await page.getByRole('button', { name: 'Lancer le gate' }).click();
-    await page.locator('.gate__verdict').waitFor({ timeout: 30000 });
-    report.gate = { verdict: await page.locator('.gate__verdict').innerText(), source: await page.locator('.gate__src').innerText(), errors };
-    await page.locator('.gate').scrollIntoViewIfNeeded();
-    await page.locator('.page').last().screenshot({ path: `${OUT}/ia-demo-verdict.png` });
-    await ctx.close();
-  }
 
   await browser.close();
   fs.writeFileSync(path.join(OUT, 'report.json'), JSON.stringify(report, null, 2));
