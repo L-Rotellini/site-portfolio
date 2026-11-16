@@ -1,17 +1,16 @@
 # 🧑‍💻 Portfolio – Louis ROTELLINI
 
-> Mon portfolio personnel développé avec **Next.js 15**, **React 19**, et **Tailwind CSS 4**.  
-> Ce site présente mes projets, mes compétences, et mes offres de services.
+> Le site de Louis Rotellini, en français : six pages portées du prototype de `docs/refonte/` (la note de cadrage fait foi).
 
 ---
 
 ## 🚀 Stack principale
 
-- [Next.js](https://nextjs.org) 15 – App Router, Server Components, SEO optimisé  
-- [React](https://react.dev) 19 – architecture moderne  
-- [Tailwind CSS](https://tailwindcss.com) 4 – design system léger  
-- [Framer Motion](https://www.framer.com/motion/) – animations fluides  
-- [Next Themes](https://github.com/pacocoursey/next-themes) – mode clair/sombre  
+- [Next.js](https://nextjs.org) 15 – App Router, une route par page, CSP à nonce dans `src/middleware.ts`
+- [React](https://react.dev) 19
+- Une seule feuille de style, `src/app/site.css`, reprise du prototype
+- Bricolage Grotesque auto-hébergée par `next/font`
+- La démo du gate d'éval de `/ia` appelle l'API d'Anthropic (`src/app/api/gate/route.ts`, clé dans `ANTHROPIC_API_KEY`)
 
 ---
 
@@ -52,21 +51,18 @@ Puis ouvre http://localhost:3000 dans ton navigateur 🚀
 
 ---
 
-## 🌟 Fonctionnalités
+## 🌟 Pages
 
-🌗 Mode clair/sombre automatique selon la préférence système
+| Route | Prototype |
+| --- | --- |
+| `/` | `Accueil.html` |
+| `/ia` | `IA.html` |
+| `/accessibilite` | `Accessibilite.html` |
+| `/maintenance-site-wordpress` | `Maintenance.html` |
+| `/ceder-sa-clientele-web` | `Ceder.html` |
+| `/mentions-legales` | `Mentions-legales.html` |
 
-⚡ Performance optimisée grâce à Next.js App Router
-
-🎞️ Animations fluides avec Framer Motion
-
-📱 Responsive design mobile-first
-
-🧠 Composants typés avec TypeScript
-
-🔍 SEO intégré (balises meta, image OpenGraph, favicon, etc.)
-
-🧩 Architecture modulaire pour la maintenance et l’évolutivité
+`/en` et ses sous-pages redirigent (307) vers leur équivalent français. Le téléphone n'apparaît en clair que sur `/mentions-legales`.
 
 ---
 

@@ -1,0 +1,33 @@
+# Indexation (build de production local, 2026-11-16)
+/                              statut=200  noindex-HTML=0  X-Robots-Tag=0  meta-robots=<meta name="robots" content="index, follow"/> <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/> 
+/ia                            statut=200  noindex-HTML=0  X-Robots-Tag=0  meta-robots=<meta name="robots" content="index, follow"/> <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/> 
+/accessibilite                 statut=200  noindex-HTML=0  X-Robots-Tag=0  meta-robots=<meta name="robots" content="index, follow"/> <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/> 
+/maintenance-site-wordpress    statut=200  noindex-HTML=0  X-Robots-Tag=0  meta-robots=<meta name="robots" content="index, follow"/> <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/> 
+/ceder-sa-clientele-web        statut=200  noindex-HTML=0  X-Robots-Tag=0  meta-robots=<meta name="robots" content="index, follow"/> <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/> 
+/mentions-legales              statut=200  noindex-HTML=0  X-Robots-Tag=0  meta-robots=<meta name="robots" content="index, follow"/> <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/> 
+
+## robots.txt
+User-Agent: *
+Allow: /
+
+Sitemap: https://www.louisrotellini.fr/sitemap.xml
+
+## sitemap.xml
+<loc>https://www.louisrotellini.fr/</loc>
+<loc>https://www.louisrotellini.fr/ia</loc>
+<loc>https://www.louisrotellini.fr/accessibilite</loc>
+<loc>https://www.louisrotellini.fr/maintenance-site-wordpress</loc>
+<loc>https://www.louisrotellini.fr/ceder-sa-clientele-web</loc>
+<loc>https://www.louisrotellini.fr/mentions-legales</loc>
+
+## twitter (accueil)
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@louisrotellini"/>
+<meta name="twitter:creator" content="@louisrotellini"/>
+<meta name="twitter:title" content="Louis Rotellini · développeur full-stack freelance à Lille"/>
+<meta name="twitter:description" content="Je développe vos pages, vos sites et vos applications web, de la conception à la mise en ligne. Pour Damart depuis 2020, pour Decathlon depuis 2023, et pour mes propres produits."/>
+<meta name="twitter:image:alt" content="Je développe vos pages, vos sites et vos applications web, de la conception à la mise en ligne."/>
+<meta name="twitter:image:type" content="image/png"/>
+<meta name="twitter:image" content="https://www.louisrotellini.fr/opengraph-image?928376f8502c14c1"/>
+<meta name="twitter:image:width" content="1200"/>
+<meta name="twitter:image:height" content="630"/>

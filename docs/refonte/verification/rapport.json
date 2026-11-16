@@ -1,0 +1,173 @@
+{
+  "pages": {
+    "/": {
+      "status": 200,
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; fram",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+      ],
+      "titleProto": "Accueil · louisrotellini.fr",
+      "titleSite": "Louis Rotellini · développeur full-stack freelance à Lille",
+      "lignesProto": 69,
+      "lignesSite": 70,
+      "ecartsTexte": [
+        "+ site : Decathlon"
+      ],
+      "linkDiff": {
+        "absentsDuSite": [],
+        "enPlusSurLeSite": []
+      },
+      "internalLinks": [
+        "/",
+        "/ia",
+        "/mentions-legales"
+      ]
+    },
+    "/ia": {
+      "status": 200,
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; fram",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+      ],
+      "titleProto": "Produits IA · louisrotellini.fr",
+      "titleSite": "Produits IA · louisrotellini.fr",
+      "lignesProto": 60,
+      "lignesSite": 60,
+      "ecartsTexte": [],
+      "linkDiff": {
+        "absentsDuSite": [],
+        "enPlusSurLeSite": []
+      },
+      "internalLinks": [
+        "/",
+        "/mentions-legales"
+      ]
+    },
+    "/accessibilite": {
+      "status": 200,
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; fram",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+      ],
+      "titleProto": "Accessibilité des sites marchands · louisrotellini.fr",
+      "titleSite": "Accessibilité des sites marchands · louisrotellini.fr",
+      "lignesProto": 61,
+      "lignesSite": 61,
+      "ecartsTexte": [],
+      "linkDiff": {
+        "absentsDuSite": [],
+        "enPlusSurLeSite": []
+      },
+      "internalLinks": [
+        "/",
+        "/mentions-legales"
+      ]
+    },
+    "/maintenance-site-wordpress": {
+      "status": 200,
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; fram",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+      ],
+      "titleProto": "Maintenance de site WordPress · louisrotellini.fr",
+      "titleSite": "Maintenance de site WordPress · louisrotellini.fr",
+      "lignesProto": 68,
+      "lignesSite": 68,
+      "ecartsTexte": [],
+      "linkDiff": {
+        "absentsDuSite": [],
+        "enPlusSurLeSite": []
+      },
+      "internalLinks": [
+        "/maintenance-site-wordpress",
+        "/mentions-legales"
+      ]
+    },
+    "/ceder-sa-clientele-web": {
+      "status": 200,
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; fram",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+      ],
+      "titleProto": "Céder sa clientèle web · louisrotellini.fr",
+      "titleSite": "Céder sa clientèle web · louisrotellini.fr",
+      "lignesProto": 74,
+      "lignesSite": 74,
+      "ecartsTexte": [],
+      "linkDiff": {
+        "absentsDuSite": [],
+        "enPlusSurLeSite": []
+      },
+      "internalLinks": [
+        "/ceder-sa-clientele-web",
+        "/",
+        "/mentions-legales"
+      ]
+    },
+    "/mentions-legales": {
+      "status": 200,
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; fram",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+      ],
+      "titleProto": "Mentions légales · louisrotellini.fr",
+      "titleSite": "Mentions légales · louisrotellini.fr",
+      "lignesProto": 25,
+      "lignesSite": 25,
+      "ecartsTexte": [],
+      "linkDiff": {
+        "absentsDuSite": [],
+        "enPlusSurLeSite": []
+      },
+      "internalLinks": [
+        "/",
+        "/#contact"
+      ]
+    }
+  },
+  "csp": {},
+  "keyboard": {
+    "cession": {
+      "skip": {
+        "text": "Aller au contenu",
+        "left": 12,
+        "outline": "solid"
+      },
+      "hashApresEntree": "#contenu",
+      "summaryOutline": "solid",
+      "detailsOuvertAuClavier": true
+    },
+    "telephone": {
+      "focus": "tel:+33615767272",
+      "outline": "solid"
+    }
+  },
+  "phone": {
+    "liensTelAvantClic": 0,
+    "href": "tel:+33615767272",
+    "texte": "06 15 76 72 72",
+    "focusSurLeLien": "tel:+33615767272"
+  },
+  "gate": {
+    "verdict": "PASS\nscore 100",
+    "source": "moteur de règles · repli hors-ligne",
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Refused to execute script from 'http://localhost:3100/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+    ]
+  },
+  "internal": {
+    "/": 200,
+    "/ia": 200,
+    "/mentions-legales": 200,
+    "/maintenance-site-wordpress": 200,
+    "/ceder-sa-clientele-web": 200,
+    "/#contact": 200
+  }
+}

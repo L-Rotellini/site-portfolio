@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Accueil · louisrotellini.fr</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" href="prod/icon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="site.css"/>
+
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#" aria-label="Louis Rotellini, accueil">
+      <img src="prod/icon.svg" alt="" width="40" height="40"/>
+      <span>Louis Rotellini</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-s" href="#pages">Réalisations</a>
+      <a class="hide-s" href="#methode">Ce que je fais</a>
+      <a class="btn btn--s" href="#contact">Me contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero">
+    <div class="wrap hero__in">
+      <div>
+        <h1>Je développe vos pages, vos sites et vos applications web, de la conception à la mise en ligne.</h1>
+        <p class="lede">Pour Damart depuis 2020, pour Decathlon depuis 2023, et pour mes propres produits. <a href="#pages">Voir mes réalisations</a>.</p>
+      </div>
+      <div class="card">
+        <img src="prod/louis-rotellini.jpg" alt="Portrait de Louis Rotellini" width="640" height="640"/>
+        <div class="card__txt">
+          <strong>Louis Rotellini</strong>
+          <span>Développeur full-stack freelance, à Lille</span>
+        </div>
+        <a class="btn btn--full" href="#contact">Me contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="since">
+    <div class="wrap since__in">
+      <div>
+        <img src="prod/logos/decathlon.svg" alt="Decathlon" height="24"/>
+        <p><strong>Depuis avril 2023.</strong> 131 landing pages publiées en 2026, au 6 novembre.</p>
+      </div>
+      <div>
+        <img src="prod/logos/damart.svg" alt="Damart" height="24"/>
+        <p><strong>Depuis février 2020.</strong> Chaque campagne sur trois marchés, en deux langues.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="pages" aria-labelledby="t-pages">
+    <div class="wrap">
+      <h2 id="t-pages">Ce que j'ai mis en ligne.</h2>
+      <p class="intro">Des pages chez mes clients, une application, des extensions. Le point vert mène à la page en ligne.</p>
+
+      <ul class="pages">
+
+        <li class="page">
+          <div class="page__shot"><img src="travaux/decathlon-location-velo-lille.jpg" alt="Capture de la page Location vélo Lille sur decathlon.fr" loading="lazy"/></div>
+          <div>
+            <img class="page__logo" src="prod/logos/decathlon.svg" alt="Decathlon"/>
+            <h3>Une série de pages locales</h3>
+            <p>La location de vélo, ville par ville : la même structure, le contenu propre à chaque ville.</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://www.decathlon.fr/location-velo-lille_lp-W7DKMI">Ouvrir la page de Lille</a>
+            <span class="host">decathlon.fr</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="travaux/damart-be-fetes-fr.jpg" alt="Capture de la page d'accueil de Damart Belgique" loading="lazy"/></div>
+          <div>
+            <img class="page__logo" src="prod/logos/damart.svg" alt="Damart"/>
+            <h3>Une page d'accueil par campagne</h3>
+            <p>La page d'accueil change à chaque campagne. Je la monte sur un marché, puis je la décline vers les deux autres.</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://www.damart.be/fr_be">Belgique, en français</a>
+            <a class="open" href="https://www.damart.be/nl_be">Belgique, en néerlandais</a>
+            <a class="open" href="https://www.damart.lu/">Luxembourg</a>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="travaux/decathlon-rappels-produits.jpg" alt="Capture de la page Rappels produits sur decathlon.fr" loading="lazy"/></div>
+          <div>
+            <img class="page__logo" src="prod/logos/decathlon.svg" alt="Decathlon"/>
+            <h3>Une page réglementaire tenue à jour</h3>
+            <p>Les rappels de produits : une page sobre, où chaque mise à jour doit être exacte et publiée vite.</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://www.decathlon.fr/lp/i/rappels-produits">Ouvrir la page</a>
+            <span class="host">decathlon.fr</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="travaux/damart-services-livraison.jpg" alt="Capture de la page Livraison de Damart France" loading="lazy"/></div>
+          <div>
+            <img class="page__logo" src="prod/logos/damart.svg" alt="Damart"/>
+            <h3>Une page de service interactive, sans JavaScript</h3>
+            <p>Les quatre modes de livraison : onglets, accordéons et carte animée, en CSS seul, parce que le site n'accepte aucun script.</p>
+          </div>
+          <div class="page__go">
+            <span class="state">En test chez Damart, mise en ligne à venir.</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="travaux/damart-guide-tailles.png" alt="Capture du guide des tailles de Damart Belgique" loading="lazy"/></div>
+          <div>
+            <img class="page__logo" src="prod/logos/damart.svg" alt="Damart"/>
+            <h3>Un guide des tailles lisible sur téléphone</h3>
+            <p>Sept tableaux de tailles repris pour qu'ils tiennent sur un petit écran, en français et en néerlandais.</p>
+          </div>
+          <div class="page__go">
+            <span class="state">Visible depuis les fiches produit de damart.be.</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot page__shot--txt" aria-hidden="true"><span>WordPress</span></div>
+          <div>
+            <h3>Trois sites WordPress que je maintiens</h3>
+            <p>Je les entretiens pour leurs propriétaires : mises à jour, sauvegardes, formulaires.</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://quai38-lille.fr/">Quai 38, Lille</a>
+            <a class="open" href="https://www.lespetitesexperiences.com">Les Petites Expériences</a>
+            <a class="open" href="https://www.lespetitesjambes.com">Les Petites Jambes</a>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="prod/projects/doctap-desktop.jpg" alt="DocTap : capture de documents et assemblage PDF sur mobile" loading="lazy"/></div>
+          <div>
+            <h3>Une application web en production</h3>
+            <p>DocTap transforme des photos de documents en PDF propres, sur mobile. Je l'ai conçue et mise en production seul : Next.js, TypeScript, PDF assemblé sur le téléphone.</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://doctap.app">Ouvrir DocTap</a>
+            <span class="host">doctap.app</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot page__shot--txt" aria-hidden="true"><span>wordpress.org</span></div>
+          <div>
+            <h3>Deux extensions WordPress publiées</h3>
+            <p>Du PHP relu et accepté par l'annuaire officiel de WordPress, que chacun peut installer.</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://wordpress.org/plugins/antwork-field-editor/">Antwork Field Editor</a>
+            <a class="open" href="https://wordpress.org/plugins/antwork-field-code/">Antwork Field Code</a>
+            <span class="host">wordpress.org</span>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="others">
+        <p>Entre 2017 et 2021, des missions freelance d'intégration front-end, en équipe : Blancheporte, Promod, Crédit Mutuel, La Foir'Fouille, Tape à l'Œil. De 2021 à 2024, Disneyland Paris.</p>
+        <div class="others__row">
+          <img src="prod/logos/blancheporte.svg" alt="Blancheporte"/>
+          <img src="prod/logos/promod.svg" alt="Promod"/>
+          <img src="prod/logos/credit-mutuel.svg" alt="Crédit Mutuel"/>
+          <img class="tall" src="prod/logos/la-foir-fouille.svg" alt="La Foir'Fouille"/>
+          <img class="tall" src="prod/logos/tape-a-loeil.svg" alt="Tape à l'Œil"/>
+          <img class="tall" src="prod/logos/disneyland-paris.svg" alt="Disneyland Paris"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="methode" aria-labelledby="t-how">
+    <div class="wrap">
+      <h2 id="t-how">Du premier brief à la mise en ligne, le même interlocuteur.</h2>
+      <p class="intro">Ce que couvre mon travail.</p>
+      <ul class="rows">
+        <li class="row"><h3>La conception</h3><div><p>Je pars de votre intention, pas d'un ticket. Sans maquette, je prototype avant de coder, et je reviens avec des options : chez Damart, sur un brief de tableaux de tailles, j'ai rendu trois variantes.</p></div></li>
+        <li class="row"><h3>Le front-end</h3><div><p>HTML, CSS, JavaScript, TypeScript, React et Next.js. Des interfaces qui tiennent sur téléphone, et qui se passent de JavaScript quand le site l'exige.</p></div></li>
+        <li class="row"><h3>Le back-end et les données</h3><div><p>PHP, Node.js, PostgreSQL, API. Des extensions WordPress publiées, et un projet personnel sur Supabase et PostgreSQL.</p></div></li>
+        <li class="row"><h3>Les CMS de mes clients</h3><div><p>Contentstack, Magento Page Builder, WordPress : je travaille dans vos outils, avec vos composants et vos règles, dans chaque langue.</p></div></li>
+        <li class="row"><h3>La mise en production et le suivi</h3><div><p>Déploiement, mises à jour, sauvegardes, et le diagnostic quand un site ralentit.</p></div></li>
+        <li class="row"><h3>L'IA, quand elle sert</h3><div><p>J'intègre des modèles de langage dans des produits, avec les tests qui prouvent qu'ils font ce qu'ils prétendent. <a href="IA.html">Voir mes produits IA</a>.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap">
+      <h2 id="t-contact">Un projet web à mener ?</h2>
+      <p>Un mail avec ce que vous voulez construire, vos outils et votre échéance suffit pour commencer.</p>
+      <a class="bigmail" href="mailto:louis.rotellini@gmail.com">louis.rotellini@gmail.com</a>
+      <p class="contact__alt">Ou sur <a href="https://www.linkedin.com/in/louis-rotellini/">LinkedIn</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Louis Rotellini, entrepreneur individuel à Lille</span>
+    <nav aria-label="Pied de page">
+      <a href="IA.html">Produits IA et parcours</a>
+      <a href="Mentions-legales.html">Mentions légales</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

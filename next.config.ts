@@ -40,17 +40,40 @@ const nextConfig: NextConfig = {
       {
         source: "/mentions-legale",
         destination: "/mentions-legales",
-        permanent: true, // 301
+        permanent: true, // 308
       },
-      // Refonte 2026 : les pages projets détaillées n'existent plus (one-page).
+      // Les anciennes pages projets détaillées n'existent plus.
       {
         source: "/projets/:id",
-        destination: "/#work",
+        destination: "/",
+        permanent: true,
+      },
+      // Refonte : le site est en français seulement. /en et ses sous-pages renvoient vers leur
+      // équivalent français par une redirection temporaire (307), pour rester réversible.
+      {
+        source: "/en/projets/:id",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/en",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/en/:path*",
+        destination: "/:path*",
+        permanent: false,
+      },
+      // /fr n'a jamais été une adresse publique : il renvoie vers l'adresse sans préfixe.
+      {
+        source: "/fr",
+        destination: "/",
         permanent: true,
       },
       {
-        source: "/en/projets/:id",
-        destination: "/en#work",
+        source: "/fr/:path*",
+        destination: "/:path*",
         permanent: true,
       },
     ];

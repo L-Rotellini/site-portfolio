@@ -18,6 +18,7 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "archive/**",
+      "docs/refonte/verification/**",
       "next-env.d.ts",
     ],
   },

@@ -1,10 +1,46 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { RUN_GATE_EVENT } from "@/lib/site";
-import { GATE_MAX, INPUT_MAX, type GateResult } from "@/lib/gate";
-import type { Locale } from "@/i18n/config";
-import type { Dictionary } from "@/i18n/dictionaries/fr";
+import { useRef, useState } from "react";
+import { GATE_MAX, INPUT_MAX, type GateResult, type RuleId } from "@/lib/gate";
+
+// Démo du gate d'éval de /ia. Logique et route /api/gate inchangées ; libellés repris de
+// l'ancien dictionnaire fr.ts (seul texte de l'ancien site conservé), habillage du style commun.
+const T = {
+  inputLabel: "Décris une fonctionnalité IA",
+  placeholder: "ex. un agent qui rédige des e-mails de remboursement…",
+  defaultInput:
+    "Un agent qui envoie automatiquement des e-mails de remboursement aux clients. Le prompt est dans l'UI. Livraison vendredi.",
+  examples: [
+    {
+      label: "→ OCR · évals · relecture · coût plafonné · réessais",
+      value:
+        "Pipeline OCR avec un jeu d'évals de référence, relecture humaine avant export, coût plafonné par document, réessais sur timeout.",
+    },
+    {
+      label: "→ RAG · prompts dans l'UI · sans évals · vendredi",
+      value:
+        "Chatbot RAG, prompts embarqués dans l'UI, aucun jeu d'évals, aucune relecture, livraison vendredi.",
+    },
+  ],
+  run: "Lancer le gate",
+  empty: "Lance le gate pour voir un verdict en direct.",
+  loading: "évaluation face au gate…",
+  limitReached: "Limite de démonstration atteinte (6 essais). Recharge la page pour relancer.",
+  throttled: "Trop d'appels sur la démo en ce moment. Réessaie dans quelques minutes.",
+  scoreWord: "score",
+  rules: {
+    evals: "Evals",
+    human_loop: "Relecture humaine",
+    cost: "Coût borné",
+    failure: "Gestion d'échec",
+  } satisfies Record<RuleId, string>,
+  notePresent: "présent",
+  noteAbsent: "absent",
+  rationalePass: "Toutes les règles éliminatoires sont satisfaites : prêt à livrer.",
+  rationaleFail: "Une ou plusieurs règles éliminatoires manquent : pas prêt à livrer.",
+  srcLive: "claude haiku 4.5 · évalué en direct",
+  srcFallback: "moteur de règles · repli hors-ligne",
+};
 
 type PanelState =
   | { kind: "empty" }
@@ -13,22 +49,15 @@ type PanelState =
   | { kind: "throttled" }
   | { kind: "done"; result: GateResult };
 
-export default function LiveGate({
-  dict,
-  locale,
-}: {
-  dict: Dictionary["live"];
-  locale: Locale;
-}) {
-  const [input, setInput] = useState(dict.defaultInput);
+export default function LiveGate() {
+  const [input, setInput] = useState(T.defaultInput);
   const [panel, setPanel] = useState<PanelState>({ kind: "empty" });
   const [disabled, setDisabled] = useState(false);
   const runs = useRef(0);
   const cooldown = useRef(false);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
-  const runBtn = useRef<HTMLButtonElement | null>(null);
 
-  const runGate = useCallback(async () => {
+  async function runGate() {
     const text = (inputRef.current?.value ?? "").trim();
     if (!text) {
       inputRef.current?.focus();
@@ -49,7 +78,7 @@ export default function LiveGate({
       const res = await fetch("/api/gate", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ text: text.slice(0, INPUT_MAX), locale }),
+        body: JSON.stringify({ text: text.slice(0, INPUT_MAX), locale: "fr" }),
       });
       if (res.status === 429) {
         setPanel({ kind: "throttled" });
@@ -64,125 +93,68 @@ export default function LiveGate({
       cooldown.current = false;
       if (runs.current < GATE_MAX) setDisabled(false);
     }
-  }, [locale]);
-
-  /* Déclenchement depuis la palette ⌘K */
-  useEffect(() => {
-    const onRun = () => void runGate();
-    document.addEventListener(RUN_GATE_EVENT, onRun);
-    return () => document.removeEventListener(RUN_GATE_EVENT, onRun);
-  }, [runGate]);
-
-  /* Bouton magnétique */
-  useEffect(() => {
-    const el = runBtn.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const move = (e: MouseEvent) => {
-      const r = el.getBoundingClientRect();
-      el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px, ${
-        (e.clientY - r.top - r.height / 2) * 0.28
-      }px)`;
-    };
-    const leave = () => {
-      el.style.transform = "";
-    };
-    el.addEventListener("mousemove", move);
-    el.addEventListener("mouseleave", leave);
-    return () => {
-      el.removeEventListener("mousemove", move);
-      el.removeEventListener("mouseleave", leave);
-    };
-  }, []);
+  }
 
   const pass = panel.kind === "done" && panel.result.verdict === "PASS";
 
   return (
-    <section className="section" id="live" data-tag="section#live">
-      <div className="wrap">
-        <div className="sec-head reveal">
-          <div>
-            <div className="eyebrow" style={{ marginBottom: 14 }}>
-              <span className="n">{dict.num}</span> / {dict.label}
-            </div>
-            <h2>{dict.title}</h2>
-          </div>
-          <p>{dict.intro}</p>
-        </div>
-        <div className="live reveal">
-          <div className="live__controls">
-            <div className="live__label" id="liveLabel">
-              {dict.inputLabel}
-            </div>
-            <textarea
-              id="liveInput"
-              ref={inputRef}
-              aria-labelledby="liveLabel"
-              placeholder={dict.placeholder}
-              value={input}
-              maxLength={INPUT_MAX}
-              onChange={(e) => setInput(e.target.value)}
-            />
-            <div className="live__examples">
-              {dict.examples.map((ex) => (
-                <button
-                  key={ex.label}
-                  className="ex"
-                  onClick={() => {
-                    setInput(ex.value);
-                    inputRef.current?.focus();
-                  }}
-                >
-                  {ex.label}
-                </button>
-              ))}
-            </div>
+    <div className="gate">
+      <div>
+        <label htmlFor="gate-input">{T.inputLabel}</label>
+        <textarea
+          id="gate-input"
+          ref={inputRef}
+          placeholder={T.placeholder}
+          value={input}
+          maxLength={INPUT_MAX}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <div className="gate__ex">
+          {T.examples.map((ex) => (
             <button
-              ref={runBtn}
-              className="live__run magnetic"
-              onClick={() => void runGate()}
-              disabled={disabled}
+              key={ex.label}
+              type="button"
+              className="btn btn--ghost"
+              onClick={() => {
+                setInput(ex.value);
+                inputRef.current?.focus();
+              }}
             >
-              {dict.run} <span className="mono">→</span>
+              {ex.label}
             </button>
-            <div className="live__note">{dict.note}</div>
-          </div>
-          <div className="live__panel" id="livePanel" aria-live="polite">
-            {panel.kind === "empty" && <div className="live__empty">{dict.empty}</div>}
-            {panel.kind === "loading" && (
-              <div className="live__loading">
-                <span className="spin"></span> {dict.loading}
-              </div>
-            )}
-            {panel.kind === "limit" && <div className="live__empty">{dict.limitReached}</div>}
-            {panel.kind === "throttled" && <div className="live__empty">{dict.throttled}</div>}
-            {panel.kind === "done" && (
-              <>
-                <div className={`verdict ${pass ? "is-pass" : "is-fail"}`}>
-                  <span className="verdict__b">{panel.result.verdict}</span>
-                  <span className="verdict__s mono">
-                    {dict.scoreWord} {panel.result.score}
-                  </span>
-                </div>
-                <ul className="gaterules">
-                  {panel.result.rules.map((r) => (
-                    <li key={r.id} className={r.ok ? "ok" : "no"}>
-                      <span className="gr__i">{r.ok ? "✓" : "✕"}</span>
-                      <span className="gr__l">{dict.rules[r.id]}</span>
-                      <span className={r.note ? "gr__n" : "gr__n mono"}>
-                        {r.note || (r.ok ? dict.notePresent : dict.noteAbsent)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="gate__rat">{pass ? dict.rationalePass : dict.rationaleFail}</p>
-                <div className="gate__src mono">
-                  {panel.result.source === "claude" ? dict.srcLive : dict.srcFallback}
-                </div>
-              </>
-            )}
-          </div>
+          ))}
         </div>
+        <button type="button" className="btn gate__run" onClick={() => void runGate()} disabled={disabled}>
+          {T.run}
+        </button>
       </div>
-    </section>
+      <div className="gate__out" aria-live="polite">
+        {panel.kind === "empty" && <p className="gate__msg">{T.empty}</p>}
+        {panel.kind === "loading" && <p className="gate__msg">{T.loading}</p>}
+        {panel.kind === "limit" && <p className="gate__msg">{T.limitReached}</p>}
+        {panel.kind === "throttled" && <p className="gate__msg">{T.throttled}</p>}
+        {panel.kind === "done" && (
+          <>
+            <p className="gate__verdict">
+              <strong>{panel.result.verdict}</strong>
+              <span>
+                {T.scoreWord} {panel.result.score}
+              </span>
+            </p>
+            <ul className="gate__rules">
+              {panel.result.rules.map((r) => (
+                <li key={r.id}>
+                  <span>{r.ok ? "✓" : "✕"}</span>
+                  <b>{T.rules[r.id]}</b>
+                  <small>{r.note || (r.ok ? T.notePresent : T.noteAbsent)}</small>
+                </li>
+              ))}
+            </ul>
+            <p className="gate__rat">{pass ? T.rationalePass : T.rationaleFail}</p>
+            <p className="gate__src">{panel.result.source === "claude" ? T.srcLive : T.srcFallback}</p>
+          </>
+        )}
+      </div>
+    </div>
   );
 }
