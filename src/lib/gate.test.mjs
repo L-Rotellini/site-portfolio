@@ -72,6 +72,46 @@ test("une négation lointaine ne crée pas de double négation", () => {
   );
 });
 
+test("« jamais » et « never » nient", () => {
+  assert.equal(okOf("on ne fait jamais de relecture").human_loop, false);
+  assert.equal(okOf("les sorties ne sont jamais validées").human_loop, false);
+  assert.equal(okOf("we never run evals").evals, false);
+  assert.equal(okOf("outputs are never reviewed").human_loop, false);
+});
+
+test("« jamais » et « never » bornent ou se combinent sans nier", () => {
+  assert.equal(okOf("sans jamais dépasser le budget").cost, true);
+  assert.equal(okOf("jamais plus de 0,05 € par doc").cost, true);
+  assert.equal(okOf("never exceeds the budget").cost, true);
+  assert.equal(okOf("on ne livre jamais sans relecture humaine").human_loop, true);
+  assert.equal(okOf("we never ship without human review").human_loop, true);
+});
+
+test("contractions anglaises en n't", () => {
+  assert.equal(okOf("we don't have evals").evals, false);
+  assert.equal(okOf("there isn't any human review").human_loop, false);
+  assert.equal(okOf("it doesn't have a golden set").evals, false);
+  assert.equal(okOf("we haven’t tested it").evals, false);
+  assert.equal(okOf("we don't ship without human review").human_loop, true);
+  assert.equal(okOf("don't exceed the budget").cost, true);
+});
+
+test("la négation couvre toute une énumération", () => {
+  for (const text of [
+    "aucun jeu d'évals, de tests ou de benchmark",
+    "pas de jeu d'évals annoté, de tests unitaires ou de benchmark",
+    "sans jeu de données annoté ni golden set ni benchmark",
+    "no labelled dataset for the pipeline or benchmark",
+  ]) {
+    assert.equal(okOf(text).evals, false, text);
+  }
+  // Une virgule qui ouvre une nouvelle proposition coupe toujours la négation.
+  assert.equal(
+    okOf("aucun prompt dans l'interface utilisateur du produit, benchmark sur 200 cas").evals,
+    true,
+  );
+});
+
 test("forme du résultat inchangée", () => {
   const r = ruleEngineGate(RAG);
   assert.deepEqual(Object.keys(r).sort(), ["rules", "score", "source", "verdict"]);

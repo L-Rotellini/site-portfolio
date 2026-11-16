@@ -36,7 +36,13 @@ const CHECKS: Record<RuleId, RegExp> = {
    près (NEGATION_WINDOW mots) dans la même proposition. Une règle est satisfaite
    dès qu'une de ses occurrences n'est pas niée. */
 const NEGATION_WINDOW = 6;
-const NEGATORS = new Set(["aucun", "aucune", "sans", "ni", "no", "without", "not"]);
+const NEGATORS = new Set([
+  "aucun", "aucune", "sans", "ni", "jamais", "no", "without", "not", "never",
+]);
+/* Maillons d'énumération : une négation porte sur toute la liste (« aucun jeu
+   d'évals, de tests ou de benchmark »). Chaque maillon, et chaque virgule restée
+   dans la proposition, relance la fenêtre de NEGATION_WINDOW mots. */
+const LIST_LINKS = new Set(["ou", "or", "ni", "nor"]);
 /* « pas » ne nie que suivi de « de » / « d' », au plus un mot plus loin
    (« pas de tests », « pas encore d'évals »). */
 const PAS_OBJECTS = new Set(["de", "d", "des", "du"]);
@@ -45,7 +51,8 @@ const PAS_OBJECTS = new Set(["de", "d", "des", "du"]);
    jamais dépasser le budget ». */
 const NEUTRALIZERS = new Set([
   "more", "less", "fewer", "than", "only", "over", "above", "exceed", "exceeding",
-  "plus", "moins", "seulement", "dépasser", "excéder",
+  "exceeds", "plus", "moins", "seulement", "dépasser", "dépasse", "dépassent",
+  "excéder", "excède",
 ]);
 /* Fin de proposition : ponctuation, ou mot de contraste (« pas d'évals mais une
    relecture »). Une virgule qui prolonge une énumération (« aucun jeu d'évals,
@@ -55,7 +62,12 @@ const CLAUSE_BREAK = new RegExp(
   String.raw`[.;:!?()[\]\n]|,(?!\s*(?:(?:de|des|du|ou|ni|or|nor)(?!\p{L})|d['’]))|(?<!\p{L})(?:mais|but|however|cependant)(?!\p{L})`,
   "giu",
 );
-const WORD_SPLIT = new RegExp(String.raw`[^\p{L}\p{N}-]+`, "u");
+/* Mots, et virgules : une virgule encore présente dans la proposition est un
+   maillon d'énumération, puisque les autres virgules ont coupé la proposition. */
+const TOKEN = new RegExp(String.raw`[\p{L}\p{N}-]+|,`, "gu");
+/* Contractions anglaises : « don't », « isn't », « doesn't » → « … not ». Sans
+   cela l'apostrophe coupe en « don » + « t » et la négation disparaît. */
+const NT_CONTRACTION = new RegExp(String.raw`n['’]t(?![\p{L}\p{N}])`, "gu");
 const ENDS_WITH_LETTER = new RegExp(String.raw`\p{L}$`, "u");
 
 function isNegator(words: string[], i: number): boolean {
@@ -76,17 +88,27 @@ function isNegated(text: string, index: number): boolean {
   const before = text.slice(0, index);
   let start = 0;
   for (const m of before.matchAll(CLAUSE_BREAK)) start = m.index + m[0].length;
-  const words = before.slice(start).toLowerCase().split(WORD_SPLIT).filter(Boolean);
+  const clause = before.slice(start).toLowerCase().replace(NT_CONTRACTION, " not");
+  const words: string[] = [];
+  // Indices des mots précédés d'une virgule d'énumération.
+  const commaBefore = new Set<number>();
+  for (const [token] of clause.matchAll(TOKEN)) {
+    if (token === ",") commaBefore.add(words.length);
+    else words.push(token);
+  }
   // Mot-clé trouvé en milieu de mot (« prévalidation ») : le fragment « pré »
   // appartient au mot-clé lui-même, pas au contexte qui le précède.
   if (ENDS_WITH_LETTER.test(before)) words.pop();
 
   let nearest = -1;
-  for (let i = words.length - 1; i >= Math.max(0, words.length - NEGATION_WINDOW); i--) {
+  let budget = NEGATION_WINDOW;
+  for (let i = words.length - 1; i >= 0 && budget > 0; i--) {
     if (isNegator(words, i)) {
       nearest = i;
       break;
     }
+    budget--;
+    if (LIST_LINKS.has(words[i]) || commaBefore.has(i)) budget = NEGATION_WINDOW;
   }
   if (nearest < 0) return false;
 
