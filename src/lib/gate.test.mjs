@@ -85,6 +85,9 @@ test("« jamais » et « never » bornent ou se combinent sans nier", () => {
   assert.equal(okOf("never exceeds the budget").cost, true);
   assert.equal(okOf("on ne livre jamais sans relecture humaine").human_loop, true);
   assert.equal(okOf("we never ship without human review").human_loop, true);
+  // Le verbe est nié, pas un complément circonstanciel qui le suit.
+  assert.equal(okOf("never fails silently thanks to retries").failure, true);
+  assert.equal(okOf("le pipeline ne plante jamais grâce aux réessais").failure, true);
 });
 
 test("contractions anglaises en n't", () => {
@@ -105,6 +108,9 @@ test("la négation couvre toute une énumération", () => {
   ]) {
     assert.equal(okOf(text).evals, false, text);
   }
+  // Une coordination après la liste ne prolonge pas la négation.
+  assert.equal(okOf("aucun prompt en dur ou en clair et tests sur 200 cas").evals, true);
+  assert.equal(okOf("sans prompt dans l'UI, ou avec relecture humaine").human_loop, true);
   // Une virgule qui ouvre une nouvelle proposition coupe toujours la négation.
   assert.equal(
     okOf("aucun prompt dans l'interface utilisateur du produit, benchmark sur 200 cas").evals,

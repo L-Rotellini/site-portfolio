@@ -41,8 +41,18 @@ const NEGATORS = new Set([
 ]);
 /* Maillons d'énumération : une négation porte sur toute la liste (« aucun jeu
    d'évals, de tests ou de benchmark »). Chaque maillon, et chaque virgule restée
-   dans la proposition, relance la fenêtre de NEGATION_WINDOW mots. */
+   dans la proposition, relance la fenêtre de NEGATION_WINDOW mots — sauf si un
+   mot de coordination sépare le maillon du mot-clé : « aucun prompt en dur ou en
+   clair et tests sur 200 cas », « sans prompt dans l'UI, ou avec relecture ».
+   « et de » / « and no » prolongent la liste et ne coupent pas. */
 const LIST_LINKS = new Set(["ou", "or", "ni", "nor"]);
+const LIST_STOPS = new Set(["avec", "with"]);
+const AND_WORDS = new Set(["et", "and"]);
+/* « jamais » / « never » portent sur le verbe : ils ne nient que le mot qui suit,
+   un mot plus loin, ou un complément en de / d' (« jamais validées », « never run
+   evals », « jamais de relecture »), pas un complément circonstanciel (« ne plante
+   jamais grâce aux réessais »). */
+const ADVERB_NEGATORS = new Set(["jamais", "never"]);
 /* « pas » ne nie que suivi de « de » / « d' », au plus un mot plus loin
    (« pas de tests », « pas encore d'évals »). */
 const PAS_OBJECTS = new Set(["de", "d", "des", "du"]);
@@ -84,6 +94,14 @@ function isNegator(words: string[], i: number): boolean {
   return NEGATORS.has(words[i]);
 }
 
+function adverbReaches(words: string[], i: number): boolean {
+  return (
+    words.length - 1 - i <= 1 ||
+    PAS_OBJECTS.has(words[i + 1] ?? "") ||
+    PAS_OBJECTS.has(words[i + 2] ?? "")
+  );
+}
+
 function isNegated(text: string, index: number): boolean {
   const before = text.slice(0, index);
   let start = 0;
@@ -102,13 +120,18 @@ function isNegated(text: string, index: number): boolean {
 
   let nearest = -1;
   let budget = NEGATION_WINDOW;
+  let extend = true;
   for (let i = words.length - 1; i >= 0 && budget > 0; i--) {
-    if (isNegator(words, i)) {
+    if (isNegator(words, i) && (!ADVERB_NEGATORS.has(words[i]) || adverbReaches(words, i))) {
       nearest = i;
       break;
     }
     budget--;
-    if (LIST_LINKS.has(words[i]) || commaBefore.has(i)) budget = NEGATION_WINDOW;
+    const w = words[i];
+    if (LIST_STOPS.has(w) || (AND_WORDS.has(w) && !PAS_OBJECTS.has(words[i + 1] ?? "") && words[i + 1] !== "no")) {
+      extend = false;
+    }
+    if (extend && (LIST_LINKS.has(w) || commaBefore.has(i))) budget = NEGATION_WINDOW;
   }
   if (nearest < 0) return false;
 
