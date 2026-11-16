@@ -33,7 +33,6 @@ const SHOTS = {
   "/travaux/damart-be-fetes-fr.jpg": [1280, 800],
   "/travaux/decathlon-rappels-produits.jpg": [800, 556],
   "/travaux/damart-services-livraison.jpg": [960, 1275],
-  "/travaux/damart-guide-tailles-femme.png": [780, 488],
   "/projects/doctap-desktop.jpg": [3142, 2384],
   "/projects/relancia-desktop.jpg": [2694, 2384],
   "/projects/horizon-desktop.jpg": [2418, 1792],
@@ -58,6 +57,46 @@ export function Shot({ src, alt }: { src: keyof typeof SHOTS; alt: string }) {
         height={height}
         sizes={SHOT_SIZES}
       />
+    </div>
+  );
+}
+
+// Vignettes composées (.page__shot--stack, --duo, --phones) : plusieurs captures superposées ou côte à côte.
+// Chaque image occupe au plus 70 % de la vignette (site.css).
+const GROUPS = {
+  wordpress: {
+    cls: "page__shot--stack",
+    items: [
+      ["/travaux/wordpress-les-petites-jambes.jpg", "Accueil du site Les Petites Jambes", 960, 600],
+      ["/travaux/wordpress-quai38-lille.jpg", "Accueil du site Quai 38, à Lille", 960, 600],
+      ["/travaux/wordpress-les-petites-experiences.jpg", "Accueil du site Les Petites Expériences", 960, 600],
+    ],
+  },
+  extensions: {
+    cls: "page__shot--stack page__shot--duo",
+    items: [
+      ["/travaux/extension-antwork-field-code.jpg", "Fiche de l'extension Antwork Field Code sur wordpress.org", 960, 600],
+      ["/travaux/extension-antwork-field-editor.jpg", "Fiche de l'extension Antwork Field Editor sur wordpress.org", 960, 600],
+    ],
+  },
+  "guide-tailles": {
+    cls: "page__shot--phones",
+    items: [
+      ["/travaux/damart-guide-tailles-fr.png", "Guide des tailles Damart en français, sur téléphone : prise des mesures", 780, 1180],
+      ["/travaux/damart-guide-tailles-nl.png", "Guide des tailles Damart en néerlandais, sur téléphone : tableau des tailles", 780, 1180],
+    ],
+  },
+} as const;
+
+const GROUP_SIZES = "(max-width: 560px) 70vw, (max-width: 900px) 140px, 190px";
+
+export function ShotGroup({ name }: { name: keyof typeof GROUPS }) {
+  const { cls, items } = GROUPS[name];
+  return (
+    <div className={`page__shot ${cls}`}>
+      {items.map(([src, alt, width, height]) => (
+        <Image key={src} src={src} alt={alt} width={width} height={height} sizes={GROUP_SIZES} />
+      ))}
     </div>
   );
 }

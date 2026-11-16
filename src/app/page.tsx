@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "@/components/Chrome";
-import { Card, Logo, Shot, TextShot } from "@/components/media";
+import { Card, Logo, Shot, ShotGroup, TextShot } from "@/components/media";
 import { pageMetadata } from "@/lib/site";
 
 // Prototype : docs/refonte/prototype/Accueil.html
@@ -76,7 +76,7 @@ export default function Accueil() {
                   <p>La location de vélo, ville par ville : la même structure, le contenu propre à chaque ville.</p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://www.decathlon.fr/location-velo-lille_lp-W7DKMI">
+                  <a className="open" rel="nofollow" href="https://www.decathlon.fr/location-velo-lille_lp-W7DKMI">
                     Ouvrir la page de Lille
                   </a>
                   <span className="host">decathlon.fr</span>
@@ -94,13 +94,13 @@ export default function Accueil() {
                   </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://www.damart.be/fr_be">
+                  <a className="open" rel="nofollow" href="https://www.damart.be/fr_be">
                     Belgique, en français
                   </a>
-                  <a className="open" href="https://www.damart.be/nl_be">
+                  <a className="open" rel="nofollow" href="https://www.damart.be/nl_be">
                     Belgique, en néerlandais
                   </a>
-                  <a className="open" href="https://www.damart.lu/">
+                  <a className="open" rel="nofollow" href="https://www.damart.lu/">
                     Luxembourg
                   </a>
                 </div>
@@ -119,7 +119,7 @@ export default function Accueil() {
                   </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://www.decathlon.fr/lp/i/rappels-produits">
+                  <a className="open" rel="nofollow" href="https://www.decathlon.fr/lp/i/rappels-produits">
                     Ouvrir la page
                   </a>
                   <span className="host">decathlon.fr</span>
@@ -145,7 +145,7 @@ export default function Accueil() {
               </li>
 
               <li className="page">
-                <Shot src="/travaux/damart-guide-tailles-femme.png" alt="Capture du guide des tailles de Damart Belgique" />
+                <ShotGroup name="guide-tailles" />
                 <div>
                   <Logo name="damart" className="page__logo" />
                   <h3>Un guide des tailles lisible sur téléphone</h3>
@@ -160,19 +160,19 @@ export default function Accueil() {
               </li>
 
               <li className="page">
-                <TextShot label="WordPress" />
+                <ShotGroup name="wordpress" />
                 <div>
                   <h3>Trois sites WordPress que je maintiens</h3>
                   <p>Je les entretiens pour leurs propriétaires : mises à jour, sauvegardes, formulaires.</p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://quai38-lille.fr/">
+                  <a className="open" rel="nofollow" href="https://quai38-lille.fr/">
                     Quai 38, Lille
                   </a>
-                  <a className="open" href="https://www.lespetitesexperiences.com">
+                  <a className="open" rel="nofollow" href="https://www.lespetitesexperiences.com">
                     Les Petites Expériences
                   </a>
-                  <a className="open" href="https://www.lespetitesjambes.com">
+                  <a className="open" rel="nofollow" href="https://www.lespetitesjambes.com">
                     Les Petites Jambes
                   </a>
                 </div>
@@ -199,7 +199,7 @@ export default function Accueil() {
               </li>
 
               <li className="page">
-                <TextShot label="wordpress.org" />
+                <ShotGroup name="extensions" />
                 <div>
                   <h3>Deux extensions WordPress publiées</h3>
                   <p>Du PHP relu et accepté par l&apos;annuaire officiel de WordPress, que chacun peut installer.</p>

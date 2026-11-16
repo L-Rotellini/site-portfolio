@@ -1,5 +1,5 @@
 import { Footer, Header } from "@/components/Chrome";
-import { Card, Logo, Shot, TextShot } from "@/components/media";
+import { Card, Logo, Shot, ShotGroup } from "@/components/media";
 import PhoneButton from "@/components/PhoneButton";
 import { pageMetadata } from "@/lib/site";
 
@@ -153,7 +153,7 @@ export default function Maintenance() {
             </p>
             <ul className="pages">
               <li className="page">
-                <TextShot label="wordpress.org" />
+                <ShotGroup name="extensions" />
                 <div>
                   <h3>Deux extensions WordPress publiées</h3>
                   <p>
@@ -179,7 +179,7 @@ export default function Maintenance() {
                   <p>Leurs pages de campagne pour la Belgique et le Luxembourg, et des pages de service pour la France.</p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://www.damart.be/fr_be">
+                  <a className="open" rel="nofollow" href="https://www.damart.be/fr_be">
                     Ouvrir damart.be
                   </a>
                 </div>
@@ -198,25 +198,25 @@ export default function Maintenance() {
                   </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://www.decathlon.fr/lp/i/rappels-produits">
+                  <a className="open" rel="nofollow" href="https://www.decathlon.fr/lp/i/rappels-produits">
                     Ouvrir une de ces pages
                   </a>
                 </div>
               </li>
               <li className="page">
-                <TextShot label="WordPress" />
+                <ShotGroup name="wordpress" />
                 <div>
                   <h3>Des sites WordPress entretenus aujourd&apos;hui</h3>
                   <p>Je maintiens des sites WordPress pour mes clients : mises à jour, sauvegardes, formulaires.</p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://quai38-lille.fr/">
+                  <a className="open" rel="nofollow" href="https://quai38-lille.fr/">
                     Quai 38, Lille
                   </a>
-                  <a className="open" href="https://www.lespetitesexperiences.com">
+                  <a className="open" rel="nofollow" href="https://www.lespetitesexperiences.com">
                     Les Petites Expériences
                   </a>
-                  <a className="open" href="https://www.lespetitesjambes.com">
+                  <a className="open" rel="nofollow" href="https://www.lespetitesjambes.com">
                     Les Petites Jambes
                   </a>
                 </div>

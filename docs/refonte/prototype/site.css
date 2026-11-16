@@ -165,6 +165,15 @@ section.alt{background:var(--wash)}
 .index strong{font-weight:600;font-size:1.25rem}
 .index span{color:var(--soft)}
 @media (max-width:700px){.index a{grid-template-columns:1fr}}
+.page__shot--stack{position:relative}
+.page__shot--stack img{position:absolute;width:62%;height:62%;left:6%;top:6%;border:1px solid var(--line);border-radius:6px;box-shadow:0 2px 10px rgba(17,17,17,.08);background:var(--paper)}
+.page__shot--stack img:nth-child(2){left:19%;top:19%}
+.page__shot--stack img:nth-child(3){left:32%;top:32%}
+.page__shot--duo img{width:70%;height:70%;left:6%;top:7%}
+.page__shot--duo img:nth-child(2){left:24%;top:23%}
+.page__shot--phones{position:relative}
+.page__shot--phones img{position:absolute;top:8%;left:11%;width:37%;height:auto;border:1px solid var(--line);border-radius:6px;box-shadow:0 2px 10px rgba(17,17,17,.08);background:var(--paper)}
+.page__shot--phones img:nth-child(2){left:52%}
 .page__shot--txt{display:grid;place-items:center;padding:12px;text-align:center}
 .page__shot--txt span{font-weight:600;font-size:1.375rem;letter-spacing:-.01em;color:var(--soft)}
 .steps--5{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}

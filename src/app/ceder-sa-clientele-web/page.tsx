@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Footer, Header } from "@/components/Chrome";
-import { Card, Logo, Shot, TextShot } from "@/components/media";
+import { Card, Logo, Shot, ShotGroup } from "@/components/media";
 import { pageMetadata } from "@/lib/site";
 
 // Prototype : docs/refonte/prototype/Ceder.html
@@ -168,7 +168,7 @@ export default function Ceder() {
             </p>
             <ul className="pages">
               <li className="page">
-                <TextShot label="wordpress.org" />
+                <ShotGroup name="extensions" />
                 <div>
                   <h3>Deux extensions WordPress publiées</h3>
                   <p>
@@ -187,7 +187,7 @@ export default function Ceder() {
                 </div>
               </li>
               <li className="page">
-                <TextShot label="WordPress" />
+                <ShotGroup name="wordpress" />
                 <div>
                   <h3>Des sites WordPress entretenus aujourd&apos;hui</h3>
                   <p>
@@ -196,13 +196,13 @@ export default function Ceder() {
                   </p>
                 </div>
                 <div className="page__go">
-                  <a className="open" href="https://quai38-lille.fr/">
+                  <a className="open" rel="nofollow" href="https://quai38-lille.fr/">
                     Quai 38, Lille
                   </a>
-                  <a className="open" href="https://www.lespetitesexperiences.com">
+                  <a className="open" rel="nofollow" href="https://www.lespetitesexperiences.com">
                     Les Petites Expériences
                   </a>
-                  <a className="open" href="https://www.lespetitesjambes.com">
+                  <a className="open" rel="nofollow" href="https://www.lespetitesjambes.com">
                     Les Petites Jambes
                   </a>
                 </div>
