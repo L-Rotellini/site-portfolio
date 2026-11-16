@@ -40,17 +40,19 @@ const NEGATORS = new Set(["aucun", "aucune", "sans", "ni", "no", "without", "not
 /* « pas » ne nie que suivi de « de » / « d' », au plus un mot plus loin
    (« pas de tests », « pas encore d'évals »). */
 const PAS_OBJECTS = new Set(["de", "d", "des", "du"]);
-/* Une négation suivie de ces mots borne au lieu de nier : « no more than 3
-   retries », « pas plus de 0,05 € par doc », « sans dépasser le budget ». */
+/* Une négation suivie de ces mots (au plus un mot plus loin) borne au lieu de
+   nier : « no more than 3 retries », « pas plus de 0,05 € par doc », « sans
+   jamais dépasser le budget ». */
 const NEUTRALIZERS = new Set([
   "more", "less", "fewer", "than", "only", "over", "above", "exceed", "exceeding",
   "plus", "moins", "seulement", "dépasser", "excéder",
 ]);
 /* Fin de proposition : ponctuation, ou mot de contraste (« pas d'évals mais une
-   relecture »). Construit par RegExp : la cible ES2017 du tsconfig refuse
+   relecture »). Une virgule qui prolonge une énumération (« aucun jeu d'évals,
+   de tests ou de benchmark ») ne coupe pas. Construit par RegExp : la cible ES2017 du tsconfig refuse
    \p{L} et les lookbehind en littéral. */
 const CLAUSE_BREAK = new RegExp(
-  String.raw`[.,;:!?()[\]\n]|(?<!\p{L})(?:mais|but|however|cependant)(?!\p{L})`,
+  String.raw`[.;:!?()[\]\n]|,(?!\s*(?:(?:de|des|du|ou|ni|or|nor)(?!\p{L})|d['’]))|(?<!\p{L})(?:mais|but|however|cependant)(?!\p{L})`,
   "giu",
 );
 const WORD_SPLIT = new RegExp(String.raw`[^\p{L}\p{N}-]+`, "u");
@@ -58,7 +60,9 @@ const ENDS_WITH_LETTER = new RegExp(String.raw`\p{L}$`, "u");
 
 function isNegator(words: string[], i: number): boolean {
   const next = words[i + 1];
-  if (next !== undefined && NEUTRALIZERS.has(next)) return false;
+  if ((next !== undefined && NEUTRALIZERS.has(next)) || NEUTRALIZERS.has(words[i + 2] ?? "")) {
+    return false;
+  }
   if (words[i] === "pas") {
     return (
       (next !== undefined && PAS_OBJECTS.has(next)) ||
@@ -86,9 +90,10 @@ function isNegated(text: string, index: number): boolean {
   }
   if (nearest < 0) return false;
 
-  // Double négation : « aucun export sans relecture » exige la relecture.
+  // Double négation : « aucun export sans relecture » exige la relecture. La
+  // négation extérieure doit elle aussi être proche du « sans ».
   if (words[nearest] === "sans" || words[nearest] === "without") {
-    for (let i = 0; i < nearest; i++) {
+    for (let i = Math.max(0, nearest - NEGATION_WINDOW); i < nearest; i++) {
       if (words[i] !== "ni" && words[i] !== "sans" && words[i] !== "without" && isNegator(words, i)) {
         return false;
       }

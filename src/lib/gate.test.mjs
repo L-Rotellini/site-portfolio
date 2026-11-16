@@ -44,6 +44,7 @@ test("négations françaises et anglaises", () => {
     "without any golden set",
     "not tested",
     "sans aucun jeu de tests de référence",
+    "aucun jeu d'évals, de tests",
   ]) {
     assert.equal(okOf(text).evals, false, text);
   }
@@ -60,7 +61,15 @@ test("double négation et bornes ne nient pas", () => {
   assert.equal(okOf("no email is sent without human approval").human_loop, true);
   assert.equal(okOf("no more than $0.05 per doc").cost, true);
   assert.equal(okOf("pas plus de 0,05 € par doc").cost, true);
+  assert.equal(okOf("réessais sans jamais dépasser le budget").cost, true);
   assert.equal(okOf("no-code pipeline with evals").evals, true);
+});
+
+test("une négation lointaine ne crée pas de double négation", () => {
+  assert.equal(
+    okOf("Aucun prompt dans l'UI pour l'instant et livraison vendredi sans évals").evals,
+    false,
+  );
 });
 
 test("forme du résultat inchangée", () => {

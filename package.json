@@ -9,7 +9,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/lib/gate.test.mjs"
+    "test": "node --experimental-strip-types --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --test src/lib/gate.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.111.0",
