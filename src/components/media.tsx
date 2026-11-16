@@ -33,7 +33,7 @@ const SHOTS = {
   "/travaux/damart-be-fetes-fr.jpg": [1280, 800],
   "/travaux/decathlon-rappels-produits.jpg": [800, 556],
   "/travaux/damart-services-livraison.jpg": [960, 1275],
-  "/travaux/damart-guide-tailles.png": [1280, 2320],
+  "/travaux/damart-guide-tailles-femme.png": [780, 488],
   "/projects/doctap-desktop.jpg": [3142, 2384],
   "/projects/relancia-desktop.jpg": [2694, 2384],
   "/projects/horizon-desktop.jpg": [2418, 1792],

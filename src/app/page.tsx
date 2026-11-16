@@ -145,7 +145,7 @@ export default function Accueil() {
               </li>
 
               <li className="page">
-                <Shot src="/travaux/damart-guide-tailles.png" alt="Capture du guide des tailles de Damart Belgique" />
+                <Shot src="/travaux/damart-guide-tailles-femme.png" alt="Capture du guide des tailles de Damart Belgique" />
                 <div>
                   <Logo name="damart" className="page__logo" />
                   <h3>Un guide des tailles lisible sur téléphone</h3>
