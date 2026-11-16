@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/site";
 // Prototype : docs/refonte/prototype/Accessibilite.html
 export const metadata = pageMetadata({
   path: "/accessibilite",
-  title: "Accessibilité des sites marchands · louisrotellini.fr",
+  title: "Accessibilité des sites marchands · Louis Rotellini",
   description:
     "Votre site marchand doit être accessible. Je corrige vos gabarits, au forfait. Vous avez déjà un audit ? Je le lis et je chiffre la correction, sans frais.",
 });

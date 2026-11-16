@@ -9,7 +9,7 @@ const PATH = "/ceder-sa-clientele-web";
 
 export const metadata = pageMetadata({
   path: PATH,
-  title: "Céder sa clientèle web · louisrotellini.fr",
+  title: "Céder sa clientèle web · Louis Rotellini",
   description:
     "Retraite, ralentissement ou changement de métier : vos clients gardent un interlocuteur pour leur site, et vous êtes payé pour la clientèle que vous avez construite.",
 });

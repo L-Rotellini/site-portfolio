@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/site";
 // Seule page où le téléphone apparaît en clair (obligation légale).
 export const metadata = pageMetadata({
   path: "/mentions-legales",
-  title: "Mentions légales · louisrotellini.fr",
+  title: "Mentions légales · Louis Rotellini",
   description:
     "Informations légales relatives au site louisrotellini.fr, conformément à la loi pour la confiance dans l'économie numérique.",
 });

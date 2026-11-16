@@ -13,7 +13,7 @@ Le site est refondu en entier, a partir d'un prototype valide page par page par 
 | `/ceder-sa-clientele-web` | `Ceder.html` | prestataires web qui cedent leur clientele | fr |
 | `/mentions-legales` | `Mentions-legales.html` | tous | fr |
 
-Le `<title>` de chaque page reprend celui du prototype ; celui de l'accueil devient « Louis Rotellini · developpeur full-stack freelance a Lille » (avec accents). Chaque page a sa description, son URL canonique et son image Open Graph dans le nouveau style (noir sur blanc, fourmi, titre de la page).
+Le `<title>` de chaque page reprend celui du prototype, « louisrotellini.fr » y etant remplace par « Louis Rotellini » ; celui de `/ia` est « Louis Rotellini · AI Product Engineer a Lille » ; celui de l'accueil devient « Louis Rotellini · developpeur full-stack freelance a Lille » (avec accents). Chaque page a sa description, son URL canonique et son image Open Graph dans le nouveau style (noir sur blanc, fourmi, titre de la page).
 
 ## Decisions
 
