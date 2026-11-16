@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Accessibilité des sites marchands · louisrotellini.fr</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" href="prod/icon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="Accueil.html" aria-label="Louis Rotellini, accueil">
+      <img src="prod/icon.svg" alt="" width="40" height="40"/>
+      <span>Louis Rotellini</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-s" href="#loi">Ce que dit la loi</a>
+      <a class="hide-s" href="#offre">L'offre</a>
+      <a class="hide-s" href="#prix">Les prix</a>
+      <a class="btn btn--s" href="#contact">Me contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero">
+    <div class="wrap hero__in">
+      <div>
+        <h1>Votre site marchand doit être accessible. Je corrige vos gabarits, au forfait.</h1>
+        <p class="lede">Vous avez déjà un audit ? Je le lis et je chiffre la correction, sans frais. Vous n'en avez pas ? Je commence par l'audit.</p>
+      </div>
+      <div class="card">
+        <img src="prod/louis-rotellini.jpg" alt="Portrait de Louis Rotellini" width="640" height="640"/>
+        <div class="card__txt">
+          <strong>Louis Rotellini</strong>
+          <span>Développeur full-stack freelance, à Lille</span>
+        </div>
+        <a class="btn btn--full" href="#contact">Envoyer mon audit</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap strip__in">
+      <span>Prix fixes, annoncés avant de commencer</span>
+      <span>Shopify, WordPress, Magento</span>
+      <span>RGAA, WCAG 2.1 niveau AA</span>
+    </div>
+  </div>
+
+  <section id="loi" aria-labelledby="t-loi">
+    <div class="wrap">
+      <h2 id="t-loi">Ce que dit la loi, et ce qui se passe déjà.</h2>
+      <p class="intro">L'obligation est en vigueur, et déjà contrôlée.</p>
+      <ul class="rows">
+        <li class="row">
+          <h3>L'obligation</h3>
+          <div><p>Depuis le 28 juin 2025, l'European Accessibility Act impose aux services de commerce en ligne vers des consommateurs d'être accessibles. Le texte français en dispense les microentreprises : moins de 10 personnes et au plus 2 M€ de chiffre d'affaires ou de bilan.</p></div>
+        </li>
+        <li class="row">
+          <h3>Les contrôles</h3>
+          <div><p>La DGCCRF contrôle des sites marchands depuis le début de 2026. Premier bilan présenté le 4 septembre 2026 : des manquements sur la moitié au moins des sites déjà contrôlés. Les résultats définitifs sont attendus début 2027.</p></div>
+        </li>
+        <li class="row">
+          <h3>La justice</h3>
+          <div><p>Le 4 juin 2026, le tribunal judiciaire de Caen a ordonné à une enseigne de la grande distribution de rendre son site et son application accessibles sous six mois, sous astreinte de 500 € par jour de retard. Un taux de conformité de 71 % a été jugé insuffisant.</p></div>
+        </li>
+      </ul>
+      <p class="note">Sources : directive (UE) 2019/882 ; bilan de la DGCCRF présenté à la Conférence nationale du handicap, 4 septembre 2026 ; TJ Caen, référé, 4 juin 2026.</p>
+    </div>
+  </section>
+
+  <section class="how" id="offre" aria-labelledby="t-offre">
+    <div class="wrap">
+      <h2 id="t-offre">Deux façons de commencer.</h2>
+      <ol class="steps">
+        <li><h3>Vous avez déjà un audit</h3><p>Vous me l'envoyez. Je le lis, je vous dis ce qui se corrige dans vos gabarits et pour combien. Cette lecture est offerte.</p></li>
+        <li><h3>Vous n'avez pas d'audit</h3><p>J'audite un échantillon de 17 pages, tunnel d'achat compris, selon la méthode du RGAA. Vous recevez un rapport et un projet de déclaration d'accessibilité.</p></li>
+        <li><h3>Ensuite, je corrige</h3><p>Gabarit par gabarit, dans votre thème ou votre CMS. Une vérification après correction clôt le travail.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="prix" aria-labelledby="t-prix">
+    <div class="wrap">
+      <h2 id="t-prix">Les prix, hors taxes.</h2>
+      <p class="intro">Un prix par livrable. Pas de jours comptés.</p>
+      <ul class="rows">
+        <li class="row row--price"><div><h3>Lecture de votre audit existant</h3><p>Et chiffrage de la correction.</p></div><span class="price">Offerte</span></li>
+        <li class="row row--price"><div><h3>Audit sur échantillon</h3><p>17 pages, tunnel d'achat compris, rapport et projet de déclaration.</p></div><span class="price">3 900 €</span></li>
+        <li class="row row--price"><div><h3>Correction d'un composant commun</h3><p>En-tête, pied de page, menu, bandeau.</p></div><span class="price">600 €</span></li>
+        <li class="row row--price"><div><h3>Correction d'un gabarit de contenu</h3><p>Accueil, page de catégorie, fiche produit, page éditoriale.</p></div><span class="price">900 €</span></li>
+        <li class="row row--price"><div><h3>Correction d'un gabarit à formulaire</h3><p>Panier, livraison, paiement, connexion, compte, recherche.</p></div><span class="price">1 500 €</span></li>
+        <li class="row row--price"><div><h3>Vérification après correction</h3><p>Les mêmes critères, rejoués sur les pages corrigées.</p></div><span class="price">1 200 €</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="t-franc">
+    <div class="wrap">
+      <h2 id="t-franc" class="h2gap">Ce que je promets, et ce que je ne promets pas.</h2>
+      <ul class="rows">
+        <li class="row"><h3>Je promets</h3><div><p>Des gabarits corrigés dans votre code, critère par critère, et la liste de ce qui a changé. Un interlocuteur unique, qui connaît le front-end des sites marchands.</p></div></li>
+        <li class="row"><h3>Je ne promets pas</h3><div><p>Une conformité totale ni une certification : personne ne peut les garantir honnêtement. Je n'installe pas de widget : un site ne devient pas conforme sans correction du code.</p></div></li>
+        <li class="row"><h3>D'où je parle</h3><div><p>Je développe pour Damart depuis 2020 et je produis les landing pages de Decathlon depuis 2023. Les gabarits, les formulaires et les composants sont mon quotidien.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap">
+      <h2 id="t-contact">Envoyez-moi votre audit, ou l'adresse de votre site.</h2>
+      <p>Je vous réponds avec ce qui se corrige et pour combien.</p>
+      <a class="bigmail" href="mailto:louis.rotellini@gmail.com?subject=Accessibilit%C3%A9%20de%20notre%20site%20marchand">louis.rotellini@gmail.com</a>
+      <p class="contact__alt">Ou sur <a href="https://www.linkedin.com/in/louis-rotellini/">LinkedIn</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Louis Rotellini, entrepreneur individuel à Lille</span>
+    <nav aria-label="Pied de page">
+      <a href="Accueil.html">Accueil</a>
+      <a href="Mentions-legales.html">Mentions légales</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Produits IA · louisrotellini.fr</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" href="prod/icon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="Accueil.html" aria-label="Louis Rotellini, accueil">
+      <img src="prod/icon.svg" alt="" width="40" height="40"/>
+      <span>Louis Rotellini</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-s" href="#produits">Produits</a>
+      <a class="hide-s" href="#approche">Approche</a>
+      <a class="hide-s" href="#parcours">Parcours</a>
+      <a class="btn btn--s" href="#contact">Me contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <div class="hero">
+    <div class="wrap hero__in">
+      <div>
+        <h1>Je conçois et mets en production des outils IA pour des usages métier concrets.</h1>
+        <p class="lede">AI Product Engineer. <a href="#produits">Voir mes produits</a>.</p>
+      </div>
+      <div class="card">
+        <img src="prod/louis-rotellini.jpg" alt="Portrait de Louis Rotellini" width="640" height="640"/>
+        <div class="card__txt">
+          <strong>Louis Rotellini</strong>
+          <span>AI Product Engineer, à Lille</span>
+        </div>
+        <a class="btn btn--full" href="#contact">Me contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap strip__in">
+      <span>Full-Stack : Next.js, TypeScript, Node.js</span>
+      <span>Intégration LLM, RAG, agents IA</span>
+      <span>Évaluation de modèles</span>
+    </div>
+  </div>
+
+  <section id="produits" aria-labelledby="t-prod">
+    <div class="wrap">
+      <h2 id="t-prod">Ce que j'ai construit.</h2>
+      <p class="intro">Quatre produits : un en production publique, un prototype en ligne, deux projets privés.</p>
+
+      <ul class="pages">
+
+        <li class="page">
+          <div class="page__shot"><img src="prod/projects/doctap-desktop.jpg" alt="DocTap : capture de documents et assemblage PDF sur mobile" loading="lazy"/></div>
+          <div>
+            <h3>DocTap</h3>
+            <p>Une application web pour mobile qui transforme des photos de documents en PDF propres, prêts à imprimer. Née d'un besoin observé chez une utilisatrice réelle, en santé à domicile.</p>
+            <p class="proof">Aucun document conservé côté serveur par DocTap : ni base, ni espace de fichiers. En mode IA, Mistral conserve entrées et sorties 30 jours.</p>
+            <p class="tags">Next.js, TypeScript, IndexedDB, pdf-lib, Mistral</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://doctap.app">Ouvrir DocTap</a>
+            <span class="host">doctap.app, en production publique</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="prod/projects/relancia-desktop.jpg" alt="RelancIA : éditeur de relance de facture" loading="lazy"/></div>
+          <div>
+            <h3>RelancIA</h3>
+            <p>Un agent qui rédige les relances de factures dans la voix de celui qui les envoie, à partir de ses propres exemples.</p>
+            <p class="proof">Aucune capacité d'envoi dans le code : l'application prépare un brouillon, l'utilisateur relit et envoie lui-même.</p>
+            <p class="tags">Next.js, React, TypeScript, API Mistral</p>
+          </div>
+          <div class="page__go">
+            <a class="open" href="https://relanc-ia.vercel.app">Ouvrir RelancIA</a>
+            <span class="host">Prototype en ligne, testé avec un premier utilisateur</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="prod/projects/horizon-desktop.jpg" alt="Horizon : chat multi-agents sur une base de connaissance" loading="lazy"/></div>
+          <div>
+            <h3>Horizon</h3>
+            <p>Un hub de connaissance personnel : quatre agents spécialisés interrogent une base de fiches commune, un routeur choisit l'agent à chaque message.</p>
+            <p class="proof">Les outils exposés au modèle sont incapables d'écrire en base : l'IA propose, l'écriture attend une validation humaine. Clé d'API côté serveur, RLS active.</p>
+            <p class="tags">Next.js, TypeScript, Supabase, Postgres, pgvector 512d avec index HNSW</p>
+          </div>
+          <div class="page__go">
+            <span class="state">MVP fonctionnel, sans démo publique.</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot"><img src="prod/projects/assistant-tri-offres-desktop.jpg" alt="Moteur de scoring : grille d'évaluation" loading="lazy"/></div>
+          <div>
+            <h3>Moteur de scoring</h3>
+            <p>Un modèle de langage nuance par défaut et évite de trancher. Ce moteur lui impose des règles fermes et éliminatoires, itérées jusqu'à ce que le classement corresponde au jugement attendu.</p>
+          </div>
+          <div class="page__go">
+            <span class="state">Projet privé de recherche.</span>
+          </div>
+        </li>
+
+        <li class="page">
+          <div class="page__shot page__shot--txt" aria-hidden="true"><span>Gate d'éval</span></div>
+          <div>
+            <h3>La démo : un gate d'éval</h3>
+            <p>Décrivez une fonctionnalité IA : un modèle la juge en direct contre quatre règles éliminatoires (évals, relecture humaine, coût borné, gestion d'échec), et dit ce qui manque quand elle échoue.</p>
+            <p class="proof">La démo est elle-même plafonnée : 6 essais, 600 caractères, verdict calculé côté serveur.</p>
+          </div>
+          <div class="page__go">
+            <span class="state">[démo à brancher à la mise en production]</span>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="how" id="approche" aria-labelledby="t-app">
+    <div class="wrap">
+      <h2 id="t-app">Rendre fiable un système faillible.</h2>
+      <ol class="steps steps--n">
+        <li><h3>Une cible mesurable</h3><p>Je ne pars jamais de l'envie d'ajouter de l'IA, mais d'un temps à réduire, d'un coût par tâche à plafonner ou d'un taux de succès à tenir. Parfois, une règle suffit et il n'y a pas d'IA du tout.</p></li>
+        <li><h3>La frontière entre règle et modèle</h3><p>Décider où une règle dure s'impose et où le modèle peut trancher. Un étage déterministe passe avant le modèle chaque fois que c'est possible.</p></li>
+        <li><h3>Des évals avant la production</h3><p>Verdict et raisonnement mesurés séparément, tests de non-régression, citations vérifiées mécaniquement, modèles épinglés à une version.</p></li>
+        <li><h3>L'IA dirigée, la décision gardée</h3><p>Je pilote Claude Code : cadrage, étapes livrables, revue du code par un agent séparé sur un contexte neuf. Ce qui part en production, c'est moi qui le tranche.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="parcours" aria-labelledby="t-par">
+    <div class="wrap">
+      <h2 id="t-par" class="h2gap">Du développement web aux produits IA.</h2>
+      <ul class="rows">
+        <li class="row"><h3>Aujourd'hui</h3><div><p>Développeur Front-end à l'IÉSEG depuis 2024, et freelance pour Decathlon depuis 2023 et Damart depuis 2020. Je construis mes produits IA à côté.</p></div></li>
+        <li class="row"><h3>Avant</h3><div><p>Une dizaine d'années de web : l'intégration d'abord, puis le développement front-end sur plusieurs CMS. Disneyland Paris de 2021 à 2024, en équipe agile.</p></div></li>
+        <li class="row"><h3>Les pages de mes clients</h3><div><p>Mon travail pour Damart et Decathlon est sur <a href="Accueil.html">la page d'accueil</a>, avec les liens vers les pages en ligne.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact alt" id="contact" aria-labelledby="t-contact">
+    <div class="wrap">
+      <h2 id="t-contact">Un poste ou une mission IA ?</h2>
+      <p>Écrivez-moi.</p>
+      <a class="bigmail" href="mailto:louis.rotellini@gmail.com">louis.rotellini@gmail.com</a>
+      <p class="contact__alt"><a href="https://github.com/L-Rotellini">GitHub</a> · <a href="https://www.linkedin.com/in/louis-rotellini/">LinkedIn</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Louis Rotellini, entrepreneur individuel à Lille</span>
+    <nav aria-label="Pied de page">
+      <a href="Accueil.html">Accueil</a>
+      <a href="Mentions-legales.html">Mentions légales</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
