@@ -299,7 +299,9 @@ export default function Maintenance() {
 
         <section aria-labelledby="t-plus">
           <div className="wrap">
-            <h2 id="t-plus">Et plus tard, si vous le souhaitez.</h2>
+            <h2 id="t-plus">
+              Et plus tard, si vous le souhaitez, avec l&apos;aide de l&apos;IA.
+            </h2>
             <p className="intro">
               Rien de cela n&apos;est nécessaire au bon fonctionnement de votre
               site. Ce sont des pistes, à évoquer quand vous voulez.
