@@ -10,6 +10,7 @@ const PAGES: { path: string; priority: number; changeFrequency: "monthly" | "yea
   { path: "/accessibilite", priority: 0.7, changeFrequency: "monthly" },
   { path: "/maintenance-site-wordpress", priority: 0.6, changeFrequency: "monthly" },
   { path: "/ceder-sa-clientele-web", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/migration-apps-atlassian-forge", priority: 0.6, changeFrequency: "monthly" },
   { path: "/mentions-legales", priority: 0.2, changeFrequency: "yearly" },
 ];
 

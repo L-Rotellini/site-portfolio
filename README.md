@@ -59,6 +59,7 @@ Puis ouvre http://localhost:3000 dans ton navigateur 🚀
 | `/accessibilite` | `Accessibilite.html` |
 | `/maintenance-site-wordpress` | `Maintenance.html` |
 | `/ceder-sa-clientele-web` | `Ceder.html` |
+| `/migration-apps-atlassian-forge` | `Migration-Forge.html` |
 | `/mentions-legales` | `Mentions-legales.html` |
 
 `/en` et ses sous-pages redirigent (307) vers leur équivalent français. Le téléphone n'apparaît en clair que sur `/mentions-legales`.
